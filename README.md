@@ -32,6 +32,7 @@ The static output includes:
 
 - `index.html`
 - `service-detail.html`
+- `service-detail/index.html` for clean service detail URLs
 - `404.html`
 - CSS and JavaScript assets
 - the full `public/` directory

@@ -7,6 +7,7 @@ OUT_DIR="${ROOT_DIR}/dist-static"
 
 rm -rf "${OUT_DIR}"
 mkdir -p "${OUT_DIR}/public"
+mkdir -p "${OUT_DIR}/service-detail"
 
 for file in \
   index.html \
@@ -21,4 +22,6 @@ do
 done
 
 cp -R "${ROOT_DIR}/public/." "${OUT_DIR}/public/"
+sed '/<title>Service Details | Qatar Pest Control<\/title>/a\    <base href="../" />' \
+  "${ROOT_DIR}/service-detail.html" > "${OUT_DIR}/service-detail/index.html"
 touch "${OUT_DIR}/.nojekyll"

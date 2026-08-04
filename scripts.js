@@ -75,7 +75,7 @@ function renderServiceCards(categoryId) {
   serviceTileRow.innerHTML = category.services
     .map(
       (service) => `
-        <a class="service-card" href="service-detail.html?service=${service.slug}" aria-label="View ${service.title} details">
+        <a class="service-card" href="service-detail?service=${service.slug}" aria-label="View ${service.title} details">
           <div class="service-card-media">
             <img src="${service.image}" alt="" />
           </div>

@@ -3,5 +3,6 @@
   "framework": null,
   "installCommand": "",
   "buildCommand": "bash ./scripts/build-static.sh",
-  "outputDirectory": "dist-static"
+  "outputDirectory": "dist-static",
+  "cleanUrls": true
 }

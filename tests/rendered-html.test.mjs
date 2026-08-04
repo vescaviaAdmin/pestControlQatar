@@ -30,7 +30,7 @@ test("server-renders the Qatar pest control hero", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Qatar Pest Control<\/title>/i);
-  assert.match(html, /Qatar(?:&rsquo;|&#x27;)s Trusted Pest Control Experts/);
+  assert.match(html, /Qatar(?:’|&rsquo;|&#x27;)s Trusted Pest Control Experts/);
   assert.match(html, /Delivering safe, effective, and professional pest management/);
   assert.match(html, /Providing top class services in:/);
   assert.match(html, /Al Wakrah/);
