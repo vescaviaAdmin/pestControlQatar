@@ -29,6 +29,22 @@ window.serviceCatalog = {
           image: "public/figma-assets/image-6.png",
           summary: "Careful cleaning for majlis spaces, seating areas, cushions, carpets, and guest-ready interiors.",
           includes: ["Soft furnishing vacuuming", "Surface dusting", "Floor care", "Detail cleaning before guest visits"],
+          badges: ["Majlis seating care", "Fabric-safe cleaning", "Guest-ready finish"],
+          facts: [
+            { value: "2-4h", label: "Typical visit" },
+            { value: "Soft", label: "Fabric-safe care" },
+            { value: "Qatar", label: "Home service" },
+          ],
+          spotlight: {
+            kicker: "Majlis-ready finish",
+            title: "Fresh seating, cushions, carpets, and guest areas cleaned with care.",
+            copy: "Ideal before family visits, gatherings, and regular majlis refreshes.",
+          },
+          steps: [
+            "We review the majlis layout, seating fabric, cushions, carpets, and high-touch surfaces.",
+            "Technicians vacuum, dust, spot-clean, and refresh the guest area with suitable methods.",
+            "We complete a final check so the majlis is tidy, comfortable, and guest-ready.",
+          ],
         },
         {
           slug: "kitchen-cleaning",

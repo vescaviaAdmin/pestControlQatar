@@ -1,14 +1,16 @@
 const header = document.querySelector(".site-header");
 let lastScrollY = window.scrollY;
 let ticking = false;
+let keepHeaderVisibleUntil = 0;
 
 function updateHeader() {
   const currentScrollY = window.scrollY;
   const scrollingDown = currentScrollY > lastScrollY;
   const pastHeader = currentScrollY > 96;
+  const keepHeaderVisible = performance.now() < keepHeaderVisibleUntil;
 
   header?.classList.toggle("is-scrolled", currentScrollY > 12);
-  header?.classList.toggle("is-hidden", scrollingDown && pastHeader);
+  header?.classList.toggle("is-hidden", !keepHeaderVisible && scrollingDown && pastHeader);
 
   lastScrollY = Math.max(currentScrollY, 0);
   ticking = false;
@@ -40,13 +42,14 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     }
 
     event.preventDefault();
+    keepHeaderVisibleUntil = performance.now() + 1200;
     header?.classList.remove("is-hidden");
 
     const headerHeight = header?.getBoundingClientRect().height ?? 0;
     const targetTop = target.getBoundingClientRect().top + window.scrollY;
 
     window.scrollTo({
-      top: Math.max(targetTop - headerHeight - 20, 0),
+      top: Math.max(targetTop - headerHeight - 12, 0),
       behavior: "smooth",
     });
   });
@@ -72,9 +75,16 @@ function renderServiceCards(categoryId) {
   serviceTileRow.innerHTML = category.services
     .map(
       (service) => `
-        <a href="service-detail.html?service=${service.slug}" aria-label="View ${service.title} details">
-          <img src="${service.image}" alt="" />
-          <h3>${service.title}</h3>
+        <a class="service-card" href="service-detail?service=${service.slug}" aria-label="View ${service.title} details">
+          <div class="service-card-media">
+            <img src="${service.image}" alt="" />
+          </div>
+          <div class="service-card-body">
+            <span class="service-card-kicker">${service.category}</span>
+            <h3>${service.title}</h3>
+            <p class="service-card-copy">${service.summary}</p>
+            <span class="service-card-link">View details</span>
+          </div>
         </a>
       `,
     )

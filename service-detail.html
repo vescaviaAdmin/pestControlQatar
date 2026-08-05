@@ -17,7 +17,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="service-detail-body">
     <main class="homepage">
       <div class="figma-frame detail-frame">
         <header class="site-header" aria-label="Main navigation">
@@ -41,55 +41,86 @@
         </header>
 
         <article class="service-detail-page" aria-labelledby="detail-title">
-          <section class="detail-hero">
-            <div class="detail-copy">
-              <a class="detail-back-link" href="index.html#services">Back to services</a>
-              <p id="detail-category">Service</p>
-              <h1 id="detail-title">Service details</h1>
-              <span id="detail-summary">
-                Explore professional cleaning and pest control services across Qatar.
-              </span>
-              <div class="detail-actions">
-                <a class="button button-primary button-hero" href="index.html#contact">
-                  Get in touch
-                </a>
-                <a class="button button-outline button-hero" href="tel:+97400000000">
-                  Call now
-                </a>
+          <section class="detail-layout" aria-label="Service information">
+            <div class="detail-column detail-copy-column">
+              <div class="detail-copy">
+                <a class="detail-back-link" href="index.html#services">Back to services</a>
+                <p id="detail-category">Service</p>
+                <h1 id="detail-title">Service details</h1>
+                <span id="detail-summary">
+                  Explore professional cleaning and pest control services across Qatar.
+                </span>
+                <ul id="detail-badges" class="detail-badges" aria-label="Service highlights">
+                  <li>Inspection first</li>
+                  <li>Safe methods</li>
+                  <li>After-care included</li>
+                </ul>
+                <div class="detail-actions">
+                  <a class="button button-primary button-hero" href="index.html#contact">
+                    Book inspection
+                  </a>
+                  <a class="button button-outline button-hero" href="tel:+97400000000">
+                    Call now
+                  </a>
+                </div>
+                <dl id="detail-facts" class="detail-facts" aria-label="Quick service facts">
+                  <div>
+                    <dt>24h</dt>
+                    <dd>Response window</dd>
+                  </div>
+                  <div>
+                    <dt>Qatar</dt>
+                    <dd>Wide coverage</dd>
+                  </div>
+                  <div>
+                    <dt>Safe</dt>
+                    <dd>Family-friendly approach</dd>
+                  </div>
+                </dl>
+              </div>
+
+              <div class="detail-panel">
+                <h2>What is included</h2>
+                <ul id="detail-includes">
+                  <li>Inspection and service planning</li>
+                  <li>Professional treatment by trained technicians</li>
+                  <li>Simple after-care guidance</li>
+                </ul>
               </div>
             </div>
 
-            <figure class="detail-image-wrap">
-              <img
-                id="detail-image"
-                src="public/service-showcase/figma-services-bg.png"
-                alt=""
-              />
-            </figure>
-          </section>
+            <div class="detail-column detail-media-column">
+              <figure class="detail-image-wrap">
+                <img
+                  id="detail-image"
+                  src="public/service-showcase/figma-services-bg.png"
+                  alt=""
+                />
+                <figcaption class="detail-image-card">
+                  <p id="detail-spotlight-kicker">Fast booking</p>
+                  <strong id="detail-spotlight-title">Trusted technicians, clear communication, and careful service.</strong>
+                  <span id="detail-spotlight-copy">Perfect for homes, villas, apartments, and commercial spaces.</span>
+                </figcaption>
+              </figure>
 
-          <section class="detail-content-grid" aria-label="Service information">
-            <div class="detail-panel">
-              <h2>What is included</h2>
-              <ul id="detail-includes">
-                <li>Inspection and service planning</li>
-                <li>Professional treatment by trained technicians</li>
-                <li>Simple after-care guidance</li>
-              </ul>
-            </div>
-
-            <div class="detail-panel detail-panel-dark">
-              <h2>How it works</h2>
-              <ol>
-                <li>Contact us with your property type and concern.</li>
-                <li>We inspect the affected area and recommend the right plan.</li>
-                <li>Our team completes the service and shares after-care steps.</li>
-              </ol>
+              <div class="detail-panel detail-panel-dark">
+                <h2>How it works</h2>
+                <ol id="detail-steps">
+                  <li>Contact us with your property type and concern.</li>
+                  <li>We inspect the affected area and recommend the right plan.</li>
+                  <li>Our team completes the service and shares after-care steps.</li>
+                </ol>
+              </div>
             </div>
           </section>
         </article>
       </div>
     </main>
+
+    <div class="mobile-cta-bar" aria-label="Quick contact actions">
+      <a class="mobile-cta mobile-cta-primary" href="tel:+97400000000">Call now</a>
+      <a class="mobile-cta mobile-cta-secondary" href="index.html#contact">Get quote</a>
+    </div>
 
     <script src="service-data.js"></script>
     <script src="scripts.js"></script>
