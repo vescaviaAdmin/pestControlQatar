@@ -67,7 +67,14 @@ if (service) {
   }
 
   if (image) {
-    image.src = service.image;
+    image.src = service.detailImage ?? service.image;
+    if (service.detailImage && service.image !== service.detailImage) {
+      image.srcset = `${service.image} 240w, ${service.detailImage} 960w`;
+      image.sizes = "(max-width: 760px) 342px, 540px";
+    } else {
+      image.removeAttribute("srcset");
+      image.removeAttribute("sizes");
+    }
     image.alt = service.title;
   }
 

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 760" role="img" aria-labelledby="qatar-map-title qatar-map-desc">
+  <title id="qatar-map-title">Qatar service coverage map</title>
+  <desc id="qatar-map-desc">A stylized map of Qatar with red service markers for Doha, Al Rayyan, Al Wakrah, Al Khor, Al Shahaniya, and Mesaieed.</desc>
+  <defs>
+    <filter id="map-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#052253" flood-opacity="0.14" />
+    </filter>
+    <linearGradient id="land-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fafdff" />
+      <stop offset="0.55" stop-color="#eaf7ff" />
+      <stop offset="1" stop-color="#d9efff" />
+    </linearGradient>
+    <radialGradient id="sea-glow" cx="70%" cy="28%" r="70%">
+      <stop offset="0" stop-color="#f2fbff" />
+      <stop offset="1" stop-color="#e4f4ff" />
+    </radialGradient>
+  </defs>
+  <rect width="640" height="760" rx="44" fill="url(#sea-glow)" />
+  <g opacity="0.45" stroke="#b8dff7" stroke-width="1">
+    <path d="M86 118H554" />
+    <path d="M76 248H564" />
+    <path d="M76 378H564" />
+    <path d="M86 508H554" />
+    <path d="M150 74V686" />
+    <path d="M304 58V704" />
+    <path d="M458 74V686" />
+  </g>
+  <g filter="url(#map-shadow)">
+    <path class="qatar-land" d="M180.53 607.57 L187.50 606.82 L197.20 598.91 L199.73 589.41 L196.56 554.08 L193.48 544.71 L177.60 517.74 L176.36 512.23 L180.35 501.83 L181.22 494.57 L180.80 487.91 L178.50 485.01 L168.60 479.48 L165.88 466.89 L165.34 453.24 L161.96 444.47 L164.61 437.77 L164.04 429.98 L162.41 421.74 L161.96 413.63 L164.92 393.52 L164.68 385.76 L159.42 357.87 L163.68 341.88 L164.19 334.58 L159.42 330.02 L169.45 318.01 L176.53 316.96 L180.75 321.65 L181.93 328.46 L185.22 331.28 L185.21 338.50 L195.11 340.16 L189.22 325.16 L187.96 318.75 L187.50 312.05 L188.23 307.88 L189.56 303.51 L189.80 298.92 L187.50 294.33 L184.48 292.51 L176.33 291.10 L172.04 289.25 L176.27 284.54 L181.16 283.31 L186.33 282.73 L191.31 280.26 L192.52 278.14 L194.87 272.45 L196.38 271.29 L198.83 272.09 L201.18 275.58 L203.93 276.36 L205.86 279.15 L205.17 285.40 L202.72 295.46 L202.72 303.17 L203.08 305.95 L206.07 312.99 L207.85 315.01 L210.51 317.11 L214.23 316.10 L214.98 315.12 L214.74 313.30 L216.25 304.62 L216.49 295.75 L218.12 291.79 L222.35 287.85 L224.91 289.03 L227.96 291.56 L233.10 291.79 L235.45 289.21 L240.65 278.38 L243.48 273.82 L233.22 277.42 L223.74 278.96 L215.89 276.06 L210.51 266.21 L210.09 260.93 L212.81 243.42 L213.71 241.76 L217.31 239.02 L218.12 237.11 L217.67 235.57 L215.77 233.33 L215.34 231.78 L215.34 220.62 L220.48 221.77 L222.23 218.82 L223.47 214.82 L226.91 212.80 L229.44 214.07 L231.62 217.30 L232.98 221.56 L233.10 225.90 L238.35 222.72 L241.79 217.66 L242.88 211.62 L240.95 205.42 L238.41 207.95 L233.04 202.65 L233.70 194.74 L243.39 173.53 L244.93 166.33 L245.96 149.45 L249.04 151.53 L250.19 152.60 L251.28 154.76 L253.57 154.76 L261.96 132.54 L269.39 122.85 L279.99 118.82 L285.61 117.68 L301.22 112.07 L304.45 109.95 L306.44 104.28 L315.11 96.31 L317.16 90.73 L323.93 92.98 L331.53 90.82 L345.03 83.12 L374.53 97.57 L380.51 103.61 L381.12 110.75 L380.33 120.01 L380.63 128.06 L384.53 131.50 L391.56 134.03 L393.74 140.24 L394.10 147.88 L395.94 154.76 L401.71 159.56 L406.36 160.30 L409.26 160.76 L425.29 159.58 L434.35 160.38 L441.78 162.52 L448.27 165.78 L454.43 169.95 L459.38 174.53 L463.43 180.23 L466.09 186.74 L472.49 227.17 L472.40 232.23 L471.31 236.53 L468.32 238.34 L466.15 237.12 L464.06 231.76 L460.83 230.51 L457.90 232.06 L455.28 235.72 L453.89 239.97 L454.43 243.42 L457.75 246.18 L460.95 245.82 L463.43 243.64 L464.79 240.88 L470.77 249.43 L465.84 258.05 L458.42 260.66 L456.97 251.03 L451.92 252.39 L439.24 258.61 L444.65 260.63 L450.29 263.77 L454.82 267.51 L456.97 271.29 L455.70 279.38 L450.66 282.64 L444.31 284.00 L439.24 286.49 L436.71 285.04 L434.14 284.18 L434.98 303.63 L434.20 309.26 L434.14 309.76 L432.09 313.02 L429.01 316.52 L426.92 320.11 L427.80 323.56 L441.42 345.01 L443.62 350.25 L444.31 355.43 L443.17 371.52 L441.78 391.04 L442.23 399.19 L444.31 403.35 L448.93 405.16 L470.74 408.28 L474.12 411.57 L477.26 418.91 L478.56 425.43 L479.85 432.02 L480.58 462.67 L476.56 500.86 L478.53 505.27 L475.29 508.44 L469.59 530.85 L464.82 537.91 L451.95 551.09 L448.03 560.17 L445.07 561.59 L441.69 562.60 L439.24 564.00 L437.43 567.23 L427.77 600.96 L427.25 602.83 L425.29 606.82 L420.94 609.79 L418.92 616.84 L416.41 632.39 L411.52 638.06 L396.52 646.22 L393.37 648.97 L391.38 657.58 L386.70 663.34 L381.60 667.99 L378.19 673.16 L373.87 667.63 L375.26 662.41 L378.58 656.53 L380.51 648.97 L377.64 644.85 L370.97 644.11 L357.93 645.29 L357.35 638.79 L355.00 638.61 L351.22 641.13 L346.27 642.77 L339.75 643.41 L333.80 645.57 L330.69 649.48 L331.53 651.90 L331.68 652.39 L306.53 670.79 L287.24 676.76 L266.24 676.88 L243.98 673.96 L225.32 666.73 L207.66 648.48 L180.53 607.57 Z" />
+  </g>
+  <path class="coast-highlight" d="M450 82 C504 164 548 266 548 382 C548 502 498 606 428 682" />
+  
+    <g class="map-pin" transform="translate(439.49 259.82)">
+      <circle class="pin-pulse" r="18" />
+      <circle class="pin-dot" r="7" />
+    </g>
+    <text class="pin-label" x="463.49" y="245.82" text-anchor="start">Al Khor</text>
+    <g class="map-pin" transform="translate(320.31 361.22)">
+      <circle class="pin-pulse" r="18" />
+      <circle class="pin-dot" r="7" />
+    </g>
+    <text class="pin-label" x="228.31" y="349.22" text-anchor="end">Al Shahaniya</text>
+    <g class="map-pin" transform="translate(448.84 407.67)">
+      <circle class="pin-pulse" r="18" />
+      <circle class="pin-dot" r="7" />
+    </g>
+    <text class="pin-label" x="466.84" y="399.67" text-anchor="start">Doha</text>
+    <g class="map-pin" transform="translate(409.28 405.26)">
+      <circle class="pin-pulse" r="18" />
+      <circle class="pin-dot" r="7" />
+    </g>
+    <text class="pin-label" x="317.28" y="431.26" text-anchor="end">Al Rayyan</text>
+    <g class="map-pin" transform="translate(475.70 449.94)">
+      <circle class="pin-pulse" r="18" />
+      <circle class="pin-dot" r="7" />
+    </g>
+    <text class="pin-label" x="497.70" y="477.94" text-anchor="start">Al Wakrah</text>
+    <g class="map-pin" transform="translate(455.63 517.17)">
+      <circle class="pin-pulse" r="18" />
+      <circle class="pin-dot" r="7" />
+    </g>
+    <text class="pin-label" x="477.63" y="547.17" text-anchor="start">Mesaieed</text>
+  <text class="map-caption" x="42" y="704">Main Qatar service zones</text>
+  <text class="map-credit" x="42" y="730">Boundary data: Natural Earth</text>
+  <style>
+    .qatar-land { fill: url(#land-gradient); stroke: #052253; stroke-width: 4; stroke-linejoin: round; }
+    .coast-highlight { fill: none; stroke: #1199ef; stroke-width: 4; stroke-linecap: round; opacity: 0.35; }
+    .pin-pulse { fill: #ff2f3d; opacity: 0.15; }
+    .pin-dot { fill: #e21b2d; stroke: #ffffff; stroke-width: 4; }
+    .pin-label { fill: #052253; font-family: Manrope, Arial, sans-serif; font-size: 22px; font-weight: 700; paint-order: stroke; stroke: #ffffff; stroke-width: 7px; stroke-linejoin: round; }
+    .map-caption { fill: #052253; font-family: Manrope, Arial, sans-serif; font-size: 24px; font-weight: 700; }
+    .map-credit { fill: #697a98; font-family: Manrope, Arial, sans-serif; font-size: 16px; font-weight: 500; }
+  </style>
+</svg>
