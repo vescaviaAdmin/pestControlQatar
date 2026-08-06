@@ -5908,3 +5908,54 @@ html {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Mobile-only map coverage panel */
+.served-areas-panel {
+  overflow: hidden;
+}
+
+.coverage-map-card {
+  display: grid;
+  width: 100%;
+  place-items: center;
+}
+
+.coverage-map-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .served-areas-panel {
+    padding: 12px;
+  }
+
+  .served-areas-top {
+    justify-content: center;
+    margin-bottom: clamp(18px, 2.4vw, 30px);
+  }
+
+  .served-areas-top h3 {
+    text-align: center;
+  }
+
+  .area-view-button,
+  .coverage-area-copy {
+    display: none;
+  }
+
+  .coverage-map-layout {
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 0;
+    min-height: calc(100vh - 180px);
+    min-height: calc(100svh - 180px);
+  }
+
+  .coverage-map-card img {
+    width: 100%;
+    height: calc(100vh - 190px);
+    height: calc(100svh - 190px);
+  }
+}

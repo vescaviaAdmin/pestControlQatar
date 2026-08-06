@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 760" role="img" aria-labelledby="qatar-map-title qatar-map-desc">
   <title id="qatar-map-title">Qatar service coverage map</title>
-  <desc id="qatar-map-desc">A stylized map of Qatar with red service markers for Doha, Al Rayyan, Al Wakrah, Al Khor, Al Shahaniya, and Mesaieed.</desc>
+  <desc id="qatar-map-desc">A stylized map of Qatar with red service markers for all 18 Doha areas plus the main Qatar service zones.</desc>
   <defs>
     <filter id="map-shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#052253" flood-opacity="0.14" />
@@ -60,6 +60,98 @@
       <circle class="pin-dot" r="7" />
     </g>
     <text class="pin-label" x="477.63" y="547.17" text-anchor="start">Mesaieed</text>
+  <g class="doha-area-markers" aria-label="Doha area service markers">
+    <g class="area-pin" transform="translate(448 392)">
+      <title>West Bay</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(471 388)">
+      <title>The Pearl</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(466 371)">
+      <title>Lusail</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(441 409)">
+      <title>Msheireb</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(429 412)">
+      <title>Al Sadd</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(458 425)">
+      <title>Old Airport</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(413 430)">
+      <title>Al Waab</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(434 405)">
+      <title>Bin Mahmoud</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(454 416)">
+      <title>Najma</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(426 388)">
+      <title>Madinat Khalifa</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(431 443)">
+      <title>Abu Hamour</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(461 410)">
+      <title>Umm Ghuwailina</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(469 438)">
+      <title>Al Thumama</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(451 431)">
+      <title>Al Hilal</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(407 398)">
+      <title>Education City</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(437 388)">
+      <title>Markhiya</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(420 379)">
+      <title>Gharafa</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(408 421)">
+      <title>Aspire Zone</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+  </g>
   <text class="map-caption" x="42" y="704">Main Qatar service zones</text>
   <text class="map-credit" x="42" y="730">Boundary data: Natural Earth</text>
   <style>
@@ -67,6 +159,8 @@
     .coast-highlight { fill: none; stroke: #1199ef; stroke-width: 4; stroke-linecap: round; opacity: 0.35; }
     .pin-pulse { fill: #ff2f3d; opacity: 0.15; }
     .pin-dot { fill: #e21b2d; stroke: #ffffff; stroke-width: 4; }
+    .area-pulse { fill: #ff2f3d; opacity: 0.22; }
+    .area-dot { fill: #e21b2d; stroke: #ffffff; stroke-width: 2.5; }
     .pin-label { fill: #052253; font-family: Manrope, Arial, sans-serif; font-size: 22px; font-weight: 700; paint-order: stroke; stroke: #ffffff; stroke-width: 7px; stroke-linejoin: round; }
     .map-caption { fill: #052253; font-family: Manrope, Arial, sans-serif; font-size: 24px; font-weight: 700; }
     .map-credit { fill: #697a98; font-family: Manrope, Arial, sans-serif; font-size: 16px; font-weight: 500; }
