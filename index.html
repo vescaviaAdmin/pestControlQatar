@@ -15,11 +15,21 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=7" />
   </head>
-  <body>
+  <body class="home-body">
     <main class="homepage">
       <div class="figma-frame">
+        <aside class="home-utility-bar" aria-label="Service availability">
+          <div class="utility-shell">
+            <p><span aria-hidden="true">★</span> 4.8 customer-rated property care</p>
+            <div>
+              <span>24/7 booking support across Qatar</span>
+              <a href="tel:+97400000000">Call now</a>
+            </div>
+          </div>
+        </aside>
+
         <header class="site-header" aria-label="Main navigation">
           <div class="nav-shell">
             <a class="brand-mark" href="index.html" aria-label="Qatar Pest Control home">
@@ -40,30 +50,63 @@
           </div>
         </header>
 
-        <section class="hero-section" id="why-us" aria-labelledby="hero-title">
+        <section class="hero-section reference-hero" id="why-us" aria-labelledby="hero-title">
+          <div class="reference-hero-slides" aria-hidden="true">
+            <!-- Free-use Pexels photo by Michelangelo Buonarroti: pexels.com/photo/4176415 -->
+            <img
+              class="reference-hero-media hero-slide-pest is-active"
+              src="public/hero-pest-cleaning.jpg"
+              alt=""
+              data-hero-slide
+              fetchpriority="high"
+            />
+            <!-- Free-use Pexels photo by Matilda Wormwood: pexels.com/photo/4098778 -->
+            <img
+              class="reference-hero-media hero-slide-cleaning"
+              src="public/hero-deep-cleaning.jpg"
+              alt=""
+              data-hero-slide
+              decoding="async"
+            />
+            <!-- Free-use Pexels photo by Liliana Drew: pexels.com/photo/9462167 -->
+            <img
+              class="reference-hero-media hero-slide-floor"
+              src="public/hero-floor-care.jpg"
+              alt=""
+              data-hero-slide
+              decoding="async"
+            />
+          </div>
+
           <div class="hero-shell">
             <div class="hero-copy">
-              <p class="hero-eyebrow">Safe, fast, and professional pest control in Qatar</p>
+              <p class="hero-eyebrow">
+                <span aria-hidden="true"></span>
+                Same-day and 24/7 booking support
+              </p>
               <div class="copy-stack">
-                <h1 id="hero-title">Qatar&rsquo;s Trusted Pest Control Experts</h1>
+                <h1 id="hero-title">
+                  Professional Pest Control
+                  <span>&amp; Cleaning Services in Qatar</span>
+                </h1>
                 <p>
-                  Delivering safe, effective, and professional pest management
-                  services across Qatar, backed by 7+ years of industry expertise.
+                  One trusted team for pest treatments, deep cleaning, upholstery,
+                  and floor care across villas, apartments, offices, and commercial spaces.
                 </p>
               </div>
 
               <ul class="hero-badges" aria-label="Key service highlights">
-                <li>Same-day response</li>
-                <li>Family-safe methods</li>
-                <li>Homes and businesses</li>
+                <li>Rapid response</li>
+                <li>Careful, approved methods</li>
+                <li>Homes &amp; businesses</li>
               </ul>
 
               <div class="hero-actions" id="contact">
                 <a class="button button-primary button-hero" href="tel:+97400000000">
-                  Book inspection
+                  Call for inspection
                 </a>
-                <a class="button button-outline button-hero" href="mailto:hello@example.com">
-                  Get quote
+                <a class="button button-outline button-hero" href="#services">
+                  Explore services
                 </a>
               </div>
 
@@ -80,65 +123,23 @@
                   <dt>4.8</dt>
                   <dd>Average rating</dd>
                 </div>
+                <div>
+                  <dt>24/7</dt>
+                  <dd>Booking support</dd>
+                </div>
               </dl>
             </div>
 
-            <section
-              class="photo-grid"
-              aria-label="Pest control service photos"
-            >
-              <div class="photo-column">
-                <figure class="photo-tile tile-large">
-                  <img
-                    class="photo-image image-five"
-                    src="public/figma-assets/image-5.png"
-                    alt="Pest control technician treating a window from a ladder"
-                  />
-                </figure>
-                <figure class="photo-tile tile-small">
-                  <img
-                    class="photo-image image-seven"
-                    src="public/figma-assets/image-7.png"
-                    alt="Professional floor treatment equipment"
-                  />
-                </figure>
-              </div>
-
-              <div class="photo-column">
-                <figure class="photo-tile tile-medium">
-                  <img
-                    class="photo-image image-six"
-                    src="public/figma-assets/image-6.png"
-                    alt="Technician cleaning and treating a mattress"
-                  />
-                </figure>
-                <figure class="photo-tile tile-tall">
-                  <img
-                    class="photo-image image-four"
-                    src="public/figma-assets/image-4.png"
-                    alt="Outdoor pest control spraying service"
-                  />
-                </figure>
-              </div>
-
-              <div class="hero-spotlight" aria-label="Service spotlight">
-                <p>Same-day visits available</p>
-                <strong>Careful treatment for villas, apartments, and commercial spaces.</strong>
-                <span>Doha, Al Wakrah, Al Khor, Al Rayyan, and nearby areas</span>
-              </div>
-            </section>
-
-            <section class="service-areas" aria-labelledby="areas-title">
-              <h2 id="areas-title">Providing top class services in:</h2>
+            <aside class="hero-assurance" aria-label="Complete property care">
+              <p>Complete property care</p>
+              <h2>One team. Every essential service.</h2>
               <ul>
-                <li>Doha</li>
-                <li>Al Wakrah</li>
-                <li>Al Khor</li>
-                <li>Al Rayyan</li>
-                <li>Al Shahaniya</li>
-                <li>Mesaieed</li>
+                <li>Pest control and prevention</li>
+                <li>Deep and specialised cleaning</li>
+                <li>Floor and upholstery care</li>
               </ul>
-            </section>
+              <a href="#services">View all services <span aria-hidden="true">→</span></a>
+            </aside>
           </div>
         </section>
 
@@ -153,9 +154,6 @@
                 <p>Best in class</p>
                 <h2 id="service-showcase-title">Services designed for homes and businesses</h2>
               </div>
-              <a class="button button-outline services-view-button" href="#contact">
-                Browse all services
-              </a>
             </div>
 
             <div class="services-tabs" aria-label="Service categories" role="tablist">
@@ -336,15 +334,21 @@
 
             <div class="served-areas-panel">
               <div class="served-areas-top">
-                <h3>Serving <span>18 areas</span> in Doha</h3>
-                <a class="button button-outline area-view-button" href="#contact">View all</a>
+                <div class="served-areas-heading">
+                  <p>Live service coverage</p>
+                  <h3>Serving <span>18 areas</span> in Doha</h3>
+                </div>
+                <span class="coverage-status">
+                  <span aria-hidden="true"></span>
+                  Qatar-wide service
+                </span>
               </div>
 
               <div class="coverage-map-layout">
                 <figure class="coverage-map-card">
                   <img
-                    src="public/qatar-service-map.svg"
-                    alt="Map of Qatar with red service markers for all 18 Doha areas and the main Qatar service zones"
+                    src="public/qatar-service-map.svg?v=5"
+                    alt="Dark map of Qatar showing its real major-road network, five national service zones, and a clustered marker for 18 Doha areas"
                     loading="lazy"
                     decoding="async"
                   />
@@ -352,9 +356,9 @@
 
                 <div class="coverage-area-copy">
                   <p>
-                    Red markers show our main service zones across Qatar. Doha
-                    coverage includes these high-demand residential and
-                    commercial areas.
+                    Real road corridors connect our main service zones across
+                    Qatar. Doha&rsquo;s highlighted cluster covers these high-demand
+                    residential and commercial areas.
                   </p>
 
                   <ul class="area-chip-list" aria-label="Doha service areas">
