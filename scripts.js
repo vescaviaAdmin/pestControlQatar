@@ -56,8 +56,12 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 });
 
 const serviceCatalog = window.serviceCatalog;
-const serviceTabs = document.querySelectorAll("[data-service-tab]");
+const serviceTabs = Array.from(document.querySelectorAll("[data-service-tab]"));
+const servicePanel = document.querySelector("#services-panel");
 const servicePanelImage = document.querySelector("#services-panel-image");
+const serviceCategoryEyebrow = document.querySelector("#services-category-eyebrow");
+const serviceCategoryTitle = document.querySelector("#services-category-title");
+const serviceCategoryDescription = document.querySelector("#services-category-description");
 const serviceTileRow = document.querySelector(".services-tile-row");
 
 function renderServiceCards(categoryId) {
@@ -71,13 +75,28 @@ function renderServiceCards(categoryId) {
 
   servicePanelImage.src = category.background;
   servicePanelImage.alt = category.backgroundAlt;
+  servicePanel?.setAttribute("aria-labelledby", `service-tab-${category.id}`);
+  serviceTileRow.setAttribute("aria-label", category.label);
+
+  if (serviceCategoryEyebrow) {
+    serviceCategoryEyebrow.textContent = category.eyebrow;
+  }
+
+  if (serviceCategoryTitle) {
+    serviceCategoryTitle.textContent = category.label;
+  }
+
+  if (serviceCategoryDescription) {
+    serviceCategoryDescription.textContent = category.description;
+  }
 
   serviceTileRow.innerHTML = category.services
     .map(
-      (service) => `
+      (service, index) => `
         <a class="service-card" href="service-detail?service=${service.slug}" aria-label="View ${service.title} details">
           <div class="service-card-media">
-            <img src="${service.image}" alt="" />
+            <img src="${service.image}" alt="" loading="lazy" decoding="async" />
+            <span class="service-card-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
           </div>
           <div class="service-card-body">
             <span class="service-card-kicker">${service.category}</span>
@@ -91,21 +110,53 @@ function renderServiceCards(categoryId) {
     .join("");
 }
 
-serviceTabs.forEach((tab) => {
+function activateServiceTab(tab, moveFocus = false) {
+  const categoryId = tab?.dataset.serviceTab;
+
+  if (!tab || !categoryId) {
+    return;
+  }
+
+  serviceTabs.forEach((item) => {
+    const isActive = item === tab;
+    item.classList.toggle("is-active", isActive);
+    item.setAttribute("aria-selected", String(isActive));
+    item.tabIndex = isActive ? 0 : -1;
+  });
+
+  renderServiceCards(categoryId);
+
+  if (moveFocus) {
+    tab.focus();
+  }
+}
+
+serviceTabs.forEach((tab, index) => {
   tab.addEventListener("click", () => {
-    const categoryId = tab.dataset.serviceTab;
+    activateServiceTab(tab);
+  });
 
-    serviceTabs.forEach((item) => {
-      const isActive = item === tab;
-      item.classList.toggle("is-active", isActive);
-      item.setAttribute("aria-selected", String(isActive));
-    });
+  tab.addEventListener("keydown", (event) => {
+    let nextIndex;
 
-    renderServiceCards(categoryId);
+    if (event.key === "ArrowRight") {
+      nextIndex = (index + 1) % serviceTabs.length;
+    } else if (event.key === "ArrowLeft") {
+      nextIndex = (index - 1 + serviceTabs.length) % serviceTabs.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = serviceTabs.length - 1;
+    } else {
+      return;
+    }
+
+    event.preventDefault();
+    activateServiceTab(serviceTabs[nextIndex], true);
   });
 });
 
-renderServiceCards("cleaning");
+activateServiceTab(serviceTabs.find((tab) => tab.classList.contains("is-active")) ?? serviceTabs[0]);
 
 const heroSlides = Array.from(document.querySelectorAll("[data-hero-slide]"));
 const heroMotionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");

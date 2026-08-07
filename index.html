@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=7" />
+    <link rel="stylesheet" href="styles.css?v=10" />
   </head>
   <body class="home-body">
     <main class="homepage">
@@ -161,7 +161,9 @@
                 class="is-active"
                 type="button"
                 role="tab"
+                id="service-tab-cleaning"
                 aria-selected="true"
+                aria-controls="services-panel"
                 data-service-tab="cleaning"
               >
                 Cleaning services
@@ -169,7 +171,10 @@
               <button
                 type="button"
                 role="tab"
+                id="service-tab-specialised"
                 aria-selected="false"
+                aria-controls="services-panel"
+                tabindex="-1"
                 data-service-tab="specialised"
               >
                 Specialised Cleaning
@@ -177,7 +182,10 @@
               <button
                 type="button"
                 role="tab"
+                id="service-tab-floor-care"
                 aria-selected="false"
+                aria-controls="services-panel"
+                tabindex="-1"
                 data-service-tab="floor-care"
               >
                 Marble &amp; Floor care
@@ -185,41 +193,108 @@
               <button
                 type="button"
                 role="tab"
+                id="service-tab-pest-control"
                 aria-selected="false"
+                aria-controls="services-panel"
+                tabindex="-1"
                 data-service-tab="pest-control"
               >
                 Pest control service
               </button>
             </div>
 
-            <div class="services-figma-panel">
-              <img
-                id="services-panel-image"
-                src="public/service-showcase/figma-services-bg.png"
-                alt="Professional cleaning service in a modern home"
-              />
-              <div class="services-panel-overlay"></div>
+            <div
+              class="services-figma-panel"
+              id="services-panel"
+              role="tabpanel"
+              aria-labelledby="service-tab-cleaning"
+            >
+              <section class="services-category-visual" aria-labelledby="services-category-title">
+                <img
+                  id="services-panel-image"
+                  src="https://images.pexels.com/photos/3768914/pexels-photo-3768914.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+                  alt="Professional cleaning service in a modern home"
+                />
+                <div class="services-panel-overlay"></div>
 
-              <div class="services-tile-row" aria-label="Featured services">
-                <a href="service-detail?service=villa-cleaning">
-                  <img src="public/service-showcase/villa-cleaning.png" alt="" />
-                  <h3>Villa Cleaning</h3>
+                <div class="services-category-summary">
+                  <span class="services-category-mark" aria-hidden="true">&#10003;</span>
+                  <p id="services-category-eyebrow">Everyday property care</p>
+                  <h3 id="services-category-title">Cleaning services</h3>
+                  <p id="services-category-description">
+                    Routine and deep cleaning for villas, apartments, and majlis spaces,
+                    delivered with a careful room-by-room approach.
+                  </p>
+
+                  <dl class="services-category-facts" aria-label="Service category highlights">
+                    <div>
+                      <dt>4</dt>
+                      <dd>Core services</dd>
+                    </div>
+                    <div>
+                      <dt>Qatar</dt>
+                      <dd>Wide coverage</dd>
+                    </div>
+                    <div>
+                      <dt>Home</dt>
+                      <dd>&amp; business care</dd>
+                    </div>
+                    <div>
+                      <dt>24/7</dt>
+                      <dd>Booking support</dd>
+                    </div>
+                  </dl>
+                </div>
+              </section>
+
+              <div class="services-tile-row" aria-label="Cleaning services">
+                <a class="service-card" href="service-detail?service=villa-cleaning" aria-label="View Villa Cleaning details">
+                  <div class="service-card-media">
+                    <img src="https://images.pexels.com/photos/3768914/pexels-photo-3768914.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" loading="lazy" decoding="async" />
+                    <span class="service-card-number" aria-hidden="true">01</span>
+                  </div>
+                  <div class="service-card-body">
+                    <span class="service-card-kicker">Cleaning services</span>
+                    <h3>Villa Cleaning</h3>
+                    <p class="service-card-copy">Complete interior cleaning for villas, majlis rooms, kitchens, bathrooms, and daily living areas.</p>
+                    <span class="service-card-link">View details</span>
+                  </div>
                 </a>
-                <a href="service-detail?service=sofa-cleaning">
-                  <img src="public/service-showcase/sofa-cleaning.png" alt="" />
-                  <h3>Sofa Cleaning</h3>
+                <a class="service-card" href="service-detail?service=apartment-cleaning" aria-label="View Apartment Cleaning details">
+                  <div class="service-card-media">
+                    <img src="https://images.pexels.com/photos/8055198/pexels-photo-8055198.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" loading="lazy" decoding="async" />
+                    <span class="service-card-number" aria-hidden="true">02</span>
+                  </div>
+                  <div class="service-card-body">
+                    <span class="service-card-kicker">Cleaning services</span>
+                    <h3>Apartment Cleaning</h3>
+                    <p class="service-card-copy">Reliable apartment cleaning for compact homes, family flats, and rental handovers across Qatar.</p>
+                    <span class="service-card-link">View details</span>
+                  </div>
                 </a>
-                <a href="service-detail?service=marble-polishing">
-                  <img src="public/service-showcase/marble-polishing.png" alt="" />
-                  <h3>Marble Polishing</h3>
+                <a class="service-card" href="service-detail?service=majlis-cleaning" aria-label="View Majlis Cleaning details">
+                  <div class="service-card-media">
+                    <img src="https://images.pexels.com/photos/4401538/pexels-photo-4401538.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" loading="lazy" decoding="async" />
+                    <span class="service-card-number" aria-hidden="true">03</span>
+                  </div>
+                  <div class="service-card-body">
+                    <span class="service-card-kicker">Cleaning services</span>
+                    <h3>Majlis Cleaning</h3>
+                    <p class="service-card-copy">Careful cleaning for majlis spaces, seating areas, cushions, carpets, and guest-ready interiors.</p>
+                    <span class="service-card-link">View details</span>
+                  </div>
                 </a>
-                <a href="service-detail?service=residential-pest-control">
-                  <img src="public/service-showcase/residential-pest-control.png" alt="" />
-                  <h3>Residential Pest Control</h3>
-                </a>
-                <a href="service-detail?service=commercial-pest-control">
-                  <img src="public/service-showcase/commercial-pest-control.png" alt="" />
-                  <h3>Commercial Pest Control</h3>
+                <a class="service-card" href="service-detail?service=deep-cleaning" aria-label="View Deep Cleaning details">
+                  <div class="service-card-media">
+                    <img src="https://images.pexels.com/photos/3616735/pexels-photo-3616735.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" loading="lazy" decoding="async" />
+                    <span class="service-card-number" aria-hidden="true">04</span>
+                  </div>
+                  <div class="service-card-body">
+                    <span class="service-card-kicker">Cleaning services</span>
+                    <h3>Deep Cleaning</h3>
+                    <p class="service-card-copy">A detailed cleaning visit for move-in, move-out, post-renovation, or seasonal refresh needs.</p>
+                    <span class="service-card-link">View details</span>
+                  </div>
                 </a>
               </div>
             </div>

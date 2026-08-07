@@ -27,6 +27,8 @@ These are the important public website files:
 - `service-data.js` - central service catalog. Add or edit service categories,
   service cards, detail copy, images, badges, facts, includes, spotlight text,
   and service steps here.
+- `SERVICE_IMAGE_SOURCES.md` - source-page and license record for the free-use
+  Pexels photos shown in the homepage service showcase.
 - `scripts.js` - homepage behavior. Handles sticky header scroll state, smooth
   anchor scrolling, service tab state, and rendering service cards from
   `window.serviceCatalog`.
@@ -68,7 +70,9 @@ assets.
 - **Phone/email/contact placeholders:** currently appear in `index.html`,
   `service-detail.html`, and the footer/mobile CTA.
 - **Images:** put local assets under `public/` and reference them with paths like
-  `public/service-showcase/example.png` in static HTML/JS.
+  `public/service-showcase/example.png` in static HTML/JS. Homepage service-card
+  and panel images are configured in `service-data.js`; keep internet-image
+  provenance current in `SERVICE_IMAGE_SOURCES.md`.
 
 ## Build And Deployment
 
@@ -186,7 +190,8 @@ They are ignored or generated outputs.
   `service-data.js` before `scripts.js` and `service-detail.js`.
 - The service detail page falls back to the first service if a slug is missing
   or unknown.
-- Some city/why-us imagery in `index.html` uses remote Wikimedia/Pexels URLs;
+- Some city/why-us imagery in `index.html` and the service showcase in
+  `service-data.js` use remote Wikimedia/Pexels URLs. Detail-page and other
   local service images live under `public/`.
 - Keep static links relative unless changing the deployment strategy.
 - `dist-static/` should be regenerated, not manually edited.
