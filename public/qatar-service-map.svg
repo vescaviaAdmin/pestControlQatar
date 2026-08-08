@@ -1,0 +1,275 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 760" role="img" aria-labelledby="qatar-map-title qatar-map-desc">
+  <title id="qatar-map-title">Qatar service coverage map</title>
+  <desc id="qatar-map-desc">A dark map of Qatar with real major-road geometry, regional divisions, five national service zones, and one clustered marker representing 18 Doha service areas.</desc>
+  <defs>
+    <filter id="map-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#000713" flood-opacity="0.5" />
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#44c7ff" flood-opacity="0.22" />
+    </filter>
+    <filter id="marker-glow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <linearGradient id="land-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123e6f" />
+      <stop offset="0.55" stop-color="#0b2e59" />
+      <stop offset="1" stop-color="#061d3d" />
+    </linearGradient>
+    <radialGradient id="sea-glow" cx="68%" cy="35%" r="78%">
+      <stop offset="0" stop-color="#0d3765" />
+      <stop offset="0.5" stop-color="#061f40" />
+      <stop offset="1" stop-color="#020c1d" />
+    </radialGradient>
+    <radialGradient id="doha-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ff7082" stop-opacity="0.42" />
+      <stop offset="1" stop-color="#ff7082" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="map-grid" width="52" height="52" patternUnits="userSpaceOnUse">
+      <path d="M52 0H0V52" fill="none" stroke="#72d4ff" stroke-width="1" opacity="0.12" />
+      <circle cx="0" cy="0" r="1.7" fill="#72d4ff" opacity="0.22" />
+    </pattern>
+    <pattern id="land-texture" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="4" r="1" fill="#8adfff" opacity="0.09" />
+      <circle cx="14" cy="12" r="0.7" fill="#d5f5ff" opacity="0.08" />
+      <path d="M0 17L18 1" stroke="#8adfff" stroke-width="0.45" opacity="0.05" />
+    </pattern>
+    <clipPath id="qatar-land-clip">
+      <path d="M180.53 607.57 L187.50 606.82 L197.20 598.91 L199.73 589.41 L196.56 554.08 L193.48 544.71 L177.60 517.74 L176.36 512.23 L180.35 501.83 L181.22 494.57 L180.80 487.91 L178.50 485.01 L168.60 479.48 L165.88 466.89 L165.34 453.24 L161.96 444.47 L164.61 437.77 L164.04 429.98 L162.41 421.74 L161.96 413.63 L164.92 393.52 L164.68 385.76 L159.42 357.87 L163.68 341.88 L164.19 334.58 L159.42 330.02 L169.45 318.01 L176.53 316.96 L180.75 321.65 L181.93 328.46 L185.22 331.28 L185.21 338.50 L195.11 340.16 L189.22 325.16 L187.96 318.75 L187.50 312.05 L188.23 307.88 L189.56 303.51 L189.80 298.92 L187.50 294.33 L184.48 292.51 L176.33 291.10 L172.04 289.25 L176.27 284.54 L181.16 283.31 L186.33 282.73 L191.31 280.26 L192.52 278.14 L194.87 272.45 L196.38 271.29 L198.83 272.09 L201.18 275.58 L203.93 276.36 L205.86 279.15 L205.17 285.40 L202.72 295.46 L202.72 303.17 L203.08 305.95 L206.07 312.99 L207.85 315.01 L210.51 317.11 L214.23 316.10 L214.98 315.12 L214.74 313.30 L216.25 304.62 L216.49 295.75 L218.12 291.79 L222.35 287.85 L224.91 289.03 L227.96 291.56 L233.10 291.79 L235.45 289.21 L240.65 278.38 L243.48 273.82 L233.22 277.42 L223.74 278.96 L215.89 276.06 L210.51 266.21 L210.09 260.93 L212.81 243.42 L213.71 241.76 L217.31 239.02 L218.12 237.11 L217.67 235.57 L215.77 233.33 L215.34 231.78 L215.34 220.62 L220.48 221.77 L222.23 218.82 L223.47 214.82 L226.91 212.80 L229.44 214.07 L231.62 217.30 L232.98 221.56 L233.10 225.90 L238.35 222.72 L241.79 217.66 L242.88 211.62 L240.95 205.42 L238.41 207.95 L233.04 202.65 L233.70 194.74 L243.39 173.53 L244.93 166.33 L245.96 149.45 L249.04 151.53 L250.19 152.60 L251.28 154.76 L253.57 154.76 L261.96 132.54 L269.39 122.85 L279.99 118.82 L285.61 117.68 L301.22 112.07 L304.45 109.95 L306.44 104.28 L315.11 96.31 L317.16 90.73 L323.93 92.98 L331.53 90.82 L345.03 83.12 L374.53 97.57 L380.51 103.61 L381.12 110.75 L380.33 120.01 L380.63 128.06 L384.53 131.50 L391.56 134.03 L393.74 140.24 L394.10 147.88 L395.94 154.76 L401.71 159.56 L406.36 160.30 L409.26 160.76 L425.29 159.58 L434.35 160.38 L441.78 162.52 L448.27 165.78 L454.43 169.95 L459.38 174.53 L463.43 180.23 L466.09 186.74 L472.49 227.17 L472.40 232.23 L471.31 236.53 L468.32 238.34 L466.15 237.12 L464.06 231.76 L460.83 230.51 L457.90 232.06 L455.28 235.72 L453.89 239.97 L454.43 243.42 L457.75 246.18 L460.95 245.82 L463.43 243.64 L464.79 240.88 L470.77 249.43 L465.84 258.05 L458.42 260.66 L456.97 251.03 L451.92 252.39 L439.24 258.61 L444.65 260.63 L450.29 263.77 L454.82 267.51 L456.97 271.29 L455.70 279.38 L450.66 282.64 L444.31 284.00 L439.24 286.49 L436.71 285.04 L434.14 284.18 L434.98 303.63 L434.20 309.26 L434.14 309.76 L432.09 313.02 L429.01 316.52 L426.92 320.11 L427.80 323.56 L441.42 345.01 L443.62 350.25 L444.31 355.43 L443.17 371.52 L441.78 391.04 L442.23 399.19 L444.31 403.35 L448.93 405.16 L470.74 408.28 L474.12 411.57 L477.26 418.91 L478.56 425.43 L479.85 432.02 L480.58 462.67 L476.56 500.86 L478.53 505.27 L475.29 508.44 L469.59 530.85 L464.82 537.91 L451.95 551.09 L448.03 560.17 L445.07 561.59 L441.69 562.60 L439.24 564.00 L437.43 567.23 L427.77 600.96 L427.25 602.83 L425.29 606.82 L420.94 609.79 L418.92 616.84 L416.41 632.39 L411.52 638.06 L396.52 646.22 L393.37 648.97 L391.38 657.58 L386.70 663.34 L381.60 667.99 L378.19 673.16 L373.87 667.63 L375.26 662.41 L378.58 656.53 L380.51 648.97 L377.64 644.85 L370.97 644.11 L357.93 645.29 L357.35 638.79 L355.00 638.61 L351.22 641.13 L346.27 642.77 L339.75 643.41 L333.80 645.57 L330.69 649.48 L331.53 651.90 L331.68 652.39 L306.53 670.79 L287.24 676.76 L266.24 676.88 L243.98 673.96 L225.32 666.73 L207.66 648.48 L180.53 607.57 Z" />
+    </clipPath>
+    <filter id="road-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.4" result="road-blur" />
+      <feMerge>
+        <feMergeNode in="road-blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="640" height="760" rx="44" fill="url(#sea-glow)" />
+  <rect x="1" y="1" width="638" height="758" rx="43" fill="none" stroke="#66d4ff" stroke-opacity="0.18" stroke-width="2" />
+  <circle cx="454" cy="402" r="235" fill="#0e7bbd" opacity="0.07" />
+  <rect x="28" y="76" width="584" height="604" rx="34" fill="url(#map-grid)" />
+  <text class="map-eyebrow" x="42" y="48">QATAR SERVICE COVERAGE</text>
+  <g class="map-status" transform="translate(448 25)">
+    <circle cx="8" cy="8" r="4" />
+    <text x="22" y="13">ACTIVE</text>
+  </g>
+  <g id="qatar-land-shape" filter="url(#map-shadow)">
+    <path class="qatar-land" d="M180.53 607.57 L187.50 606.82 L197.20 598.91 L199.73 589.41 L196.56 554.08 L193.48 544.71 L177.60 517.74 L176.36 512.23 L180.35 501.83 L181.22 494.57 L180.80 487.91 L178.50 485.01 L168.60 479.48 L165.88 466.89 L165.34 453.24 L161.96 444.47 L164.61 437.77 L164.04 429.98 L162.41 421.74 L161.96 413.63 L164.92 393.52 L164.68 385.76 L159.42 357.87 L163.68 341.88 L164.19 334.58 L159.42 330.02 L169.45 318.01 L176.53 316.96 L180.75 321.65 L181.93 328.46 L185.22 331.28 L185.21 338.50 L195.11 340.16 L189.22 325.16 L187.96 318.75 L187.50 312.05 L188.23 307.88 L189.56 303.51 L189.80 298.92 L187.50 294.33 L184.48 292.51 L176.33 291.10 L172.04 289.25 L176.27 284.54 L181.16 283.31 L186.33 282.73 L191.31 280.26 L192.52 278.14 L194.87 272.45 L196.38 271.29 L198.83 272.09 L201.18 275.58 L203.93 276.36 L205.86 279.15 L205.17 285.40 L202.72 295.46 L202.72 303.17 L203.08 305.95 L206.07 312.99 L207.85 315.01 L210.51 317.11 L214.23 316.10 L214.98 315.12 L214.74 313.30 L216.25 304.62 L216.49 295.75 L218.12 291.79 L222.35 287.85 L224.91 289.03 L227.96 291.56 L233.10 291.79 L235.45 289.21 L240.65 278.38 L243.48 273.82 L233.22 277.42 L223.74 278.96 L215.89 276.06 L210.51 266.21 L210.09 260.93 L212.81 243.42 L213.71 241.76 L217.31 239.02 L218.12 237.11 L217.67 235.57 L215.77 233.33 L215.34 231.78 L215.34 220.62 L220.48 221.77 L222.23 218.82 L223.47 214.82 L226.91 212.80 L229.44 214.07 L231.62 217.30 L232.98 221.56 L233.10 225.90 L238.35 222.72 L241.79 217.66 L242.88 211.62 L240.95 205.42 L238.41 207.95 L233.04 202.65 L233.70 194.74 L243.39 173.53 L244.93 166.33 L245.96 149.45 L249.04 151.53 L250.19 152.60 L251.28 154.76 L253.57 154.76 L261.96 132.54 L269.39 122.85 L279.99 118.82 L285.61 117.68 L301.22 112.07 L304.45 109.95 L306.44 104.28 L315.11 96.31 L317.16 90.73 L323.93 92.98 L331.53 90.82 L345.03 83.12 L374.53 97.57 L380.51 103.61 L381.12 110.75 L380.33 120.01 L380.63 128.06 L384.53 131.50 L391.56 134.03 L393.74 140.24 L394.10 147.88 L395.94 154.76 L401.71 159.56 L406.36 160.30 L409.26 160.76 L425.29 159.58 L434.35 160.38 L441.78 162.52 L448.27 165.78 L454.43 169.95 L459.38 174.53 L463.43 180.23 L466.09 186.74 L472.49 227.17 L472.40 232.23 L471.31 236.53 L468.32 238.34 L466.15 237.12 L464.06 231.76 L460.83 230.51 L457.90 232.06 L455.28 235.72 L453.89 239.97 L454.43 243.42 L457.75 246.18 L460.95 245.82 L463.43 243.64 L464.79 240.88 L470.77 249.43 L465.84 258.05 L458.42 260.66 L456.97 251.03 L451.92 252.39 L439.24 258.61 L444.65 260.63 L450.29 263.77 L454.82 267.51 L456.97 271.29 L455.70 279.38 L450.66 282.64 L444.31 284.00 L439.24 286.49 L436.71 285.04 L434.14 284.18 L434.98 303.63 L434.20 309.26 L434.14 309.76 L432.09 313.02 L429.01 316.52 L426.92 320.11 L427.80 323.56 L441.42 345.01 L443.62 350.25 L444.31 355.43 L443.17 371.52 L441.78 391.04 L442.23 399.19 L444.31 403.35 L448.93 405.16 L470.74 408.28 L474.12 411.57 L477.26 418.91 L478.56 425.43 L479.85 432.02 L480.58 462.67 L476.56 500.86 L478.53 505.27 L475.29 508.44 L469.59 530.85 L464.82 537.91 L451.95 551.09 L448.03 560.17 L445.07 561.59 L441.69 562.60 L439.24 564.00 L437.43 567.23 L427.77 600.96 L427.25 602.83 L425.29 606.82 L420.94 609.79 L418.92 616.84 L416.41 632.39 L411.52 638.06 L396.52 646.22 L393.37 648.97 L391.38 657.58 L386.70 663.34 L381.60 667.99 L378.19 673.16 L373.87 667.63 L375.26 662.41 L378.58 656.53 L380.51 648.97 L377.64 644.85 L370.97 644.11 L357.93 645.29 L357.35 638.79 L355.00 638.61 L351.22 641.13 L346.27 642.77 L339.75 643.41 L333.80 645.57 L330.69 649.48 L331.53 651.90 L331.68 652.39 L306.53 670.79 L287.24 676.76 L266.24 676.88 L243.98 673.96 L225.32 666.73 L207.66 648.48 L180.53 607.57 Z" />
+  </g>
+  <g class="real-map-detail" clip-path="url(#qatar-land-clip)" aria-hidden="true">
+    <rect x="146" y="70" width="350" height="620" fill="url(#land-texture)" />
+    <path class="urban-footprint" d="M395 344C418 329 454 330 478 350C497 367 504 404 493 438C481 470 452 487 419 479C389 472 369 447 372 415C375 386 378 357 395 344Z" />
+    <path class="urban-footprint urban-footprint-secondary" d="M433 486C453 477 478 484 489 502C498 518 492 544 473 554C454 565 429 556 421 538C414 520 419 495 433 486Z" />
+    <g class="district-boundaries">
+      <path d="M244 149C288 192 332 231 386 253" />
+      <path d="M205 284C263 305 330 319 430 313" />
+      <path d="M180 393C252 398 318 399 383 418" />
+      <path d="M194 503C271 475 329 469 397 484" />
+      <path d="M253 605C297 560 347 538 445 537" />
+    </g>
+    <g class="road-network">
+    <path class="road road-motorway" d="M377.5 358.1L378.9 355.4L381.7 334.9L385.6 280.1L388.3 276.1M372.9 443.4L328.4 460.1L319.7 464.8M390.7 273.5L385.5 279.9L382.2 326.4M322.4 463.4L373.2 443.4M278.0 498.5L261.6 514.2L252.7 529.4L248.2 533.9M283.7 493.4L307.3 472.4L320.1 464.7M314.6 467.8L307.2 472.4L283.6 493.3M407.6 310.3L409.5 292.3L404.3 271.2M404.1 271.2L409.4 292.6L407.5 310.3M219.5 559.9L248.8 533.6M248.2 533.9L219.4 559.8M265.9 345.0L231.1 331.9M248.8 533.6L253.2 528.9L261.0 515.0L270.0 506.3M371.9 377.4L364.8 374.0L352.6 371.4L340.3 364.6M231.7 332.2L263.4 344.4M342.4 366.2L352.5 371.5L364.6 374.1L371.9 377.6M206.5 573.4L207.5 583.4L203.8 597.0L199.8 602.8M382.2 326.4L378.2 356.6M227.7 510.5L210.9 486.1M210.8 486.2L227.6 510.5M231.1 331.9L225.4 330.8L218.1 331.9L206.9 338.8M313.3 345.2L304.6 342.8L287.7 343.8M287.7 343.9L304.4 342.9L313.3 345.3M182.4 427.6L182.7 436.2L189.3 450.7M189.3 450.7L182.8 436.4L182.4 427.6M178.7 408.5L176.8 398.9L177.3 389.1L175.8 384.4M175.7 384.4L177.2 389.0L176.8 398.9L178.6 408.5M426.4 319.3L431.3 329.1L434.2 341.0M416.2 358.0L408.7 342.7L407.4 337.1M418.1 247.2L406.1 260.9L402.4 263.4M381.6 145.5L383.2 167.7M198.6 467.4L210.7 486.0M210.7 486.0L198.7 467.5M250.8 530.4L234.1 516.0M388.0 209.0L393.5 229.9M205.1 593.5L207.8 582.1L206.7 572.6M412.3 423.7L393.9 434.6M380.0 124.1L381.6 145.3M407.3 337.2L408.4 342.3L415.3 356.6M234.1 516.0L249.6 529.4M198.6 467.2L195.4 458.2L189.4 450.9M383.3 167.7L381.9 148.4M172.9 368.3L175.9 349.5M393.6 229.8L388.8 211.2M381.7 145.3L380.3 126.3M270.0 506.3L283.6 493.5M388.3 276.1L402.1 263.7M263.4 344.4L268.1 345.3L281.6 344.4M174.7 351.2L172.8 368.3M385.0 192.0L388.0 208.7M393.9 434.6L378.3 441.3M413.4 335.4L420.1 333.8L429.5 333.8M281.6 344.3L265.9 345.0M387.6 438.0L401.1 430.5M408.3 476.0L420.9 484.9M364.4 409.7L370.5 423.8M375.1 361.7L374.8 376.8M402.0 263.5L390.7 273.5M420.7 484.5L408.4 475.9M367.4 416.1L363.3 406.6L363.6 402.1M434.9 271.4L429.0 284.9M422.5 486.1L433.2 496.2M389.8 364.1L390.0 359.0L393.0 349.9M406.2 322.7L407.3 336.9M407.4 336.9L406.3 322.7M367.8 98.3L377.1 108.3M392.7 351.0L389.8 359.3L389.7 364.1M397.0 243.2L393.6 230.1M393.5 230.1L396.9 243.2M367.8 98.1L355.6 92.8M385.1 191.8L384.1 178.7M186.3 347.1L178.8 347.8L174.7 351.2M328.2 357.1L339.3 364.1M339.3 364.0L328.3 357.0M219.2 559.9L208.4 567.1M408.3 258.6L416.7 248.9M376.7 442.2L386.3 450.4M440.8 256.9L436.0 268.7M424.3 333.7L412.1 335.7M209.0 566.6L219.3 560.1M375.0 374.9L374.9 362.7M406.3 322.5L407.6 310.4M407.5 310.4L406.2 322.5M349.2 90.4L339.0 84.2M373.2 443.4L384.1 439.3M432.7 333.5L428.8 322.9M406.9 473.9L405.2 469.6L405.0 463.2M199.9 603.0L205.1 593.5M175.9 349.5L179.0 347.7L186.3 347.1M384.1 178.6L383.4 167.9M404.9 463.8L405.0 469.3L406.7 474.0M355.6 92.9L365.3 96.7M380.1 123.9L379.3 113.5M195.0 457.6L198.6 467.2M376.6 441.8L374.1 431.9M181.0 418.7L178.7 408.7M178.7 408.7L180.9 418.7M439.4 503.6L447.2 510.1M384.6 448.6L376.8 442.2M447.3 510.0L439.6 503.5M368.8 393.5L363.4 402.0M436.3 268.5L440.0 259.2M440.2 358.8L436.4 349.6M320.4 350.8L328.1 357.0M328.2 356.9L320.5 350.7M199.3 344.4L189.8 346.8M401.7 261.6L404.1 271.0M431.0 493.5L423.9 486.9M369.1 393.3L375.3 386.0M421.9 311.0L426.4 319.3M384.0 178.7L384.7 187.8M213.5 333.9L222.2 331.2M460.2 428.2L451.8 431.4M370.9 424.4L367.4 416.1M382.7 384.1L391.0 387.5M189.3 450.9L195.0 457.6M374.8 376.8L374.3 385.6M190.8 346.7L199.3 344.5M172.5 370.9L174.1 379.6M174.2 379.6L172.6 370.9M420.9 302.1L421.8 310.9M468.4 425.1L460.2 428.2M404.5 461.1L401.9 457.5L398.1 455.5M404.2 271.0L402.1 262.7M363.6 402.1L368.1 394.9M398.0 455.6L404.1 460.8M389.8 372.3L389.8 364.1M207.0 338.8L213.5 333.9M374.8 385.1L375.0 377.0M339.3 84.5L346.1 88.9" />
+    <path class="road road-trunk" d="M402.5 208.6L416.2 220.3M415.9 220.1L402.6 208.5M400.8 206.8L390.5 194.9M432.1 221.1L437.9 227.6L440.6 232.9M231.2 691.7L221.1 681.4M440.6 232.7L432.2 221.1M387.9 193.1L397.8 203.5M418.9 220.6L430.2 219.5M221.0 681.4L229.0 689.4M428.4 219.1L419.0 220.5M403.1 439.8L412.1 438.5M412.1 438.4L403.1 439.6M441.0 244.6L443.5 236.6M450.7 424.3L458.1 422.5M181.8 614.6L188.7 611.9M445.5 470.7L451.5 475.0M188.6 611.8L181.7 614.5M451.6 474.9L445.6 470.6M465.0 518.9L469.7 523.9M462.0 488.8L460.3 495.5M460.9 502.7L463.0 505.3L463.1 508.8M463.3 508.8L463.1 505.3L461.0 502.7M432.1 431.1L438.0 428.6M441.5 381.8L435.5 380.1M457.9 478.5L452.3 475.3M469.7 523.8L465.5 519.4M188.7 611.9L193.8 608.5M193.7 608.3L188.6 611.8M434.9 459.8L439.1 464.2M478.7 486.9L473.1 484.6M442.7 238.3L441.1 244.0M469.1 419.4L466.3 414.1M479.9 440.5L480.8 446.2M455.6 423.1L449.9 424.2M473.1 484.6L467.7 482.5M436.0 380.2L441.4 381.8M439.0 463.9L435.0 459.7M427.6 396.6L430.4 401.3M482.3 488.5L486.4 492.3M486.4 492.2L482.4 488.5M473.0 484.7L478.1 486.7M468.6 473.4L470.8 468.4M465.3 480.1L463.3 484.9M415.1 393.4L420.2 394.5M415.2 405.6L415.2 410.8M466.5 414.7L468.9 419.2M423.1 434.9L418.4 436.9M463.7 484.4L465.6 479.9M437.1 412.7L439.8 416.8M430.4 401.2L427.7 397.3M480.9 446.1L480.4 441.4M459.9 498.0L460.8 502.6M415.3 410.9L415.3 406.1M460.2 479.8L464.5 481.4M461.8 490.1L463.2 485.8M463.2 511.5L463.6 516.0M439.9 416.7L437.3 413.0M426.0 385.4L427.6 381.4M464.6 481.3L460.4 479.7M460.9 502.5L459.9 498.3M455.2 407.7L459.2 406.1M450.3 407.6L454.7 407.7M428.6 440.4L426.1 436.9M469.1 471.8L467.3 475.7M426.1 436.9L428.5 440.5M480.8 446.2L479.0 450.2M194.0 608.3L197.2 605.4M463.3 484.9L462.0 488.8M463.6 515.7L463.3 511.6M440.7 244.7L439.1 246.1L439.4 247.9M481.3 413.5L477.5 414.7M427.2 381.6L426.0 385.4M440.8 233.1L443.9 235.6M465.6 479.9L467.3 476.3M475.9 432.7L474.1 429.2M439.6 248.2L439.2 246.1L440.6 244.9M478.9 450.6L477.3 454.1M413.6 438.2L417.3 437.3M417.3 437.2L413.6 438.1M443.2 423.2L440.8 426.1M418.8 394.1L415.1 393.4M431.6 452.1L431.0 448.5M454.7 476.8L457.8 478.6M446.3 405.9L449.5 407.5M415.5 400.2L415.2 403.7M479.8 440.1L478.1 437.0M458.9 406.3L455.6 407.6M477.4 454.1L478.9 450.8M447.6 392.4L448.5 389.1M418.4 437.0L421.7 435.6M443.8 235.5L441.0 233.3M442.7 467.6L440.2 465.2M439.1 428.0L435.9 429.4M462.1 407.6L464.2 410.3M441.0 374.4L437.7 375.0M443.3 383.1L445.3 385.8M426.1 389.0L427.7 391.9M479.5 449.3L480.9 446.3M478.1 459.4L474.9 460.3M435.2 410.0L437.1 412.7" />
+    <path class="road road-primary" d="M261.7 548.4L269.4 562.9L278.5 591.4L280.7 620.4L275.2 645.1L277.8 666.5M296.9 708.0L292.6 694.2L283.5 680.3L277.8 666.5M431.9 220.5L436.2 216.1L449.6 191.1M449.5 191.1L436.1 216.1L431.8 220.4M455.5 180.9L468.4 160.6M468.3 160.5L455.7 180.3M460.8 537.0L469.8 524.1M469.7 524.0L460.7 536.8M456.2 538.1L453.0 535.3L450.4 526.5M392.7 368.6L390.1 372.0L389.4 380.7M461.3 526.0L459.3 514.5M256.0 538.4L261.7 548.4M261.7 548.4L256.0 538.4M411.4 366.6L400.2 367.7M400.2 367.7L411.4 366.7M450.4 525.8L450.5 514.9M423.4 259.7L414.2 265.1M390.2 378.2L390.2 371.9L392.7 368.6M450.5 515.2L450.3 525.8M473.3 435.6L466.8 429.1M466.8 429.3L473.2 435.6M406.8 270.8L414.3 265.1M450.1 552.2L454.5 544.3M414.2 265.1L407.1 270.7M454.4 544.3L450.0 552.2M449.8 552.3L445.9 560.0M446.0 560.1L450.0 552.4M431.6 254.2L424.4 259.2M414.3 265.1L421.7 260.5M459.6 517.6L461.2 526.0M400.7 271.5L392.3 272.6M445.3 498.6L452.6 495.0M419.3 385.9L411.9 387.9M461.2 526.1L464.5 532.4M464.5 532.3L461.3 526.1M451.7 532.6L456.1 538.0M466.0 414.4L459.3 416.4M430.0 364.8L432.4 371.3M399.4 433.9L402.8 439.6M450.2 526.2L451.7 532.6M460.2 495.2L453.6 494.7M403.0 439.5L399.6 434.0M413.2 387.4L419.5 386.0M401.8 419.7L404.7 425.5M454.6 544.2L456.3 538.2M456.2 538.2L454.4 544.1M404.7 425.5L401.9 419.7M439.1 502.7L444.5 499.2M388.1 272.3L382.2 270.1M382.2 270.2L388.1 272.4M458.3 416.6L452.3 417.3M444.0 499.3L439.0 502.6M426.9 257.6L431.7 254.3M256.0 538.4L253.2 533.4M469.1 514.5L464.2 517.3M450.4 495.5L445.6 498.3M464.2 517.4L469.0 514.9M405.2 444.8L403.1 439.9M410.1 414.6L405.5 417.3M402.9 439.9L405.0 444.8M465.5 426.1L462.5 421.7M442.9 382.4L443.1 377.2M418.8 410.4L423.6 408.5M400.0 367.7L395.0 367.7M411.7 436.2L409.0 432.0M435.9 384.9L434.2 380.5M454.7 509.9L459.1 511.4M405.7 417.3L409.7 415.0M426.4 437.6L429.1 441.4M473.6 459.5L476.3 463.3M462.8 422.3L465.4 426.1M458.9 511.3L454.7 509.8M438.6 502.8L436.8 504.0L438.7 502.9M332.1 78.2L334.8 81.6M465.0 496.0L460.7 495.3M422.9 375.9L420.6 372.4M456.0 494.8L460.2 495.3M439.7 389.6L441.5 393.4M415.1 411.7L411.5 413.8M452.0 417.4L456.1 416.9M458.2 410.5L461.5 408.1M396.0 367.7L400.0 367.7M442.5 382.9L439.7 385.9" />
+    </g>
+    <g class="urban-street-grid">
+      <path d="M402 357L474 443M394 372L468 457M388 392L454 470M420 342L382 441M440 338L397 462M460 346L417 476M478 362L438 482" />
+      <path d="M435 494L478 543M428 509L466 552M454 486L425 543M473 492L443 557" />
+    </g>
+  </g>
+  <g class="map-feature-labels" aria-hidden="true">
+    <text x="386" y="302" transform="rotate(-83 386 302)">AL SHAMAL CORRIDOR</text>
+    <text x="268" y="487" transform="rotate(-22 268 487)">WESTERN CORRIDOR</text>
+    <text class="water-label" x="530" y="282" transform="rotate(82 530 282)">ARABIAN GULF</text>
+  </g>
+  <path class="coast-highlight" d="M450 82 C504 164 548 266 548 382 C548 502 498 606 428 682" />
+  
+    <g class="map-pin" transform="translate(439.49 259.82)">
+      <circle class="pin-pulse" r="18" />
+      <circle class="pin-dot" r="7" />
+    </g>
+    <text class="pin-label" x="463.49" y="245.82" text-anchor="start">Al Khor</text>
+    <g class="map-pin" transform="translate(320.31 361.22)">
+      <circle class="pin-pulse" r="18" />
+      <circle class="pin-dot" r="7" />
+    </g>
+    <text class="pin-label" x="228.31" y="349.22" text-anchor="end">Al Shahaniya</text>
+    <g class="map-pin doha-main-pin" transform="translate(448.84 407.67)">
+      <circle class="pin-pulse" r="18" />
+      <circle class="pin-dot" r="7" />
+    </g>
+    <text class="pin-label doha-main-label" x="466.84" y="399.67" text-anchor="start">Doha</text>
+    <g class="map-pin" transform="translate(409.28 405.26)">
+      <circle class="pin-pulse" r="18" />
+      <circle class="pin-dot" r="7" />
+    </g>
+    <text class="pin-label" x="317.28" y="431.26" text-anchor="end">Al Rayyan</text>
+    <g class="map-pin" transform="translate(475.70 449.94)">
+      <circle class="pin-pulse" r="18" />
+      <circle class="pin-dot" r="7" />
+    </g>
+    <text class="pin-label" x="497.70" y="477.94" text-anchor="start">Al Wakrah</text>
+    <g class="map-pin" transform="translate(455.63 517.17)">
+      <circle class="pin-pulse" r="18" />
+      <circle class="pin-dot" r="7" />
+    </g>
+    <text class="pin-label" x="477.63" y="547.17" text-anchor="start">Mesaieed</text>
+  <g class="doha-area-markers" aria-label="Doha area service markers">
+    <g class="area-pin" transform="translate(448 392)">
+      <title>West Bay</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(471 388)">
+      <title>The Pearl</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(466 371)">
+      <title>Lusail</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(441 409)">
+      <title>Msheireb</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(429 412)">
+      <title>Al Sadd</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(458 425)">
+      <title>Old Airport</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(413 430)">
+      <title>Al Waab</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(434 405)">
+      <title>Bin Mahmoud</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(454 416)">
+      <title>Najma</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(426 388)">
+      <title>Madinat Khalifa</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(431 443)">
+      <title>Abu Hamour</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(461 410)">
+      <title>Umm Ghuwailina</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(469 438)">
+      <title>Al Thumama</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(451 431)">
+      <title>Al Hilal</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(407 398)">
+      <title>Education City</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(437 388)">
+      <title>Markhiya</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(420 379)">
+      <title>Gharafa</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+    <g class="area-pin" transform="translate(408 421)">
+      <title>Aspire Zone</title>
+      <circle class="area-pulse" r="10" />
+      <circle class="area-dot" r="4" />
+    </g>
+  </g>
+  <g class="doha-cluster" transform="translate(452 405)" aria-label="18 Doha service areas">
+    <circle class="cluster-halo" r="54" />
+    <circle class="cluster-ring cluster-ring-outer" r="38" />
+    <circle class="cluster-ring" r="30" />
+    <circle class="cluster-core" r="23" />
+    <text class="cluster-count" x="0" y="7" text-anchor="middle">18</text>
+  </g>
+  <path class="cluster-leader" d="M478 385L509 348H582" />
+  <text class="cluster-label" x="582" y="333" text-anchor="end">DOHA COVERAGE</text>
+  <text class="cluster-subtitle" x="582" y="357" text-anchor="end">18 active areas</text>
+
+  <g class="map-legend" transform="translate(42 698)">
+    <circle class="legend-zone" cx="7" cy="7" r="7" />
+    <text x="24" y="13">Main service zones</text>
+    <circle class="legend-doha" cx="238" cy="7" r="7" />
+    <text x="255" y="13">Doha area cluster</text>
+  </g>
+  <text class="map-credit" x="42" y="738">Road data © OpenStreetMap contributors · ODbL</text>
+  <text class="map-credit map-coordinate" x="598" y="738" text-anchor="end">Boundary: Natural Earth</text>
+  <style>
+    text { font-family: Manrope, Arial, sans-serif; }
+    .map-eyebrow { fill: #73d8ff; font-size: 15px; font-weight: 800; letter-spacing: 3px; }
+    .map-status circle { fill: #55e6b5; filter: url(#marker-glow); }
+    .map-status text { fill: #bcebdd; font-size: 13px; font-weight: 800; letter-spacing: 2px; }
+    .qatar-land { fill: url(#land-gradient); stroke: #67d5ff; stroke-width: 4; stroke-linejoin: round; }
+    .urban-footprint { fill: #36b7e8; opacity: 0.13; stroke: #70d9ff; stroke-width: 1.2; stroke-dasharray: 4 5; }
+    .urban-footprint-secondary { fill: #42d6b4; opacity: 0.09; stroke: #7ee8cd; }
+    .district-boundaries { fill: none; stroke: #8bdcf7; stroke-width: 1.15; stroke-dasharray: 5 7; opacity: 0.2; }
+    .road-network { fill: none; stroke-linecap: round; stroke-linejoin: round; filter: url(#road-glow); }
+    .road { vector-effect: non-scaling-stroke; }
+    .road-motorway { stroke: #f6c95f; stroke-width: 1.8; opacity: 0.72; }
+    .road-trunk { stroke: #63dfce; stroke-width: 1.35; opacity: 0.58; }
+    .road-primary { stroke: #9adfff; stroke-width: 1.05; opacity: 0.42; }
+    .urban-street-grid { fill: none; stroke: #b9edff; stroke-width: 0.7; stroke-dasharray: 2 3; opacity: 0.18; }
+    .map-feature-labels text { fill: #86b4cc; font-size: 9px; font-weight: 750; letter-spacing: 1.3px; paint-order: stroke; stroke: #0a294d; stroke-width: 3px; }
+    .map-feature-labels .water-label { fill: #4ea5ca; font-size: 10px; letter-spacing: 2.4px; opacity: 0.72; }
+    .coast-highlight { fill: none; stroke: #49c9ff; stroke-width: 3; stroke-linecap: round; opacity: 0.25; }
+    .pin-pulse { fill: #48c9ff; opacity: 0.16; }
+    .pin-dot { fill: #61d2ff; stroke: #dff8ff; stroke-width: 4; filter: url(#marker-glow); }
+    .pin-label { fill: #e8f7ff; font-size: 19px; font-weight: 750; paint-order: stroke; stroke: #06172e; stroke-width: 8px; stroke-linejoin: round; }
+    .doha-area-markers, .doha-main-pin, .doha-main-label { display: none; }
+    .cluster-halo { fill: url(#doha-glow); }
+    .cluster-ring { fill: none; stroke: #ff7b8c; stroke-width: 2; opacity: 0.7; }
+    .cluster-ring-outer { opacity: 0.28; }
+    .cluster-core { fill: #f24f68; stroke: #ffd8dd; stroke-width: 3; filter: url(#marker-glow); }
+    .cluster-count { fill: #fff; font-size: 20px; font-weight: 850; }
+    .cluster-leader { fill: none; stroke: #ff93a2; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: 0.9; }
+    .cluster-label { fill: #ffb4be; font-size: 14px; font-weight: 850; letter-spacing: 1.8px; }
+    .cluster-subtitle { fill: #fff; font-size: 17px; font-weight: 700; }
+    .map-legend text { fill: #c3dbeb; font-size: 15px; font-weight: 650; }
+    .legend-zone { fill: #61d2ff; stroke: #dff8ff; stroke-width: 2; }
+    .legend-doha { fill: #f24f68; stroke: #ffd8dd; stroke-width: 2; }
+    .map-credit { fill: #6f93ae; font-size: 12px; font-weight: 600; letter-spacing: 0.4px; }
+    .map-coordinate { fill: #577a97; }
+    .cluster-ring-outer { transform-box: fill-box; transform-origin: center; animation: coverage-pulse 2.8s ease-out infinite; }
+    @keyframes coverage-pulse {
+      0% { transform: scale(0.75); opacity: 0.5; }
+      75%, 100% { transform: scale(1.35); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cluster-ring-outer { animation: none; }
+    }
+  </style>
+</svg>
