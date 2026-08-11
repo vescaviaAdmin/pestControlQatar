@@ -9,9 +9,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Qatar Pest Control",
+  title: "Al Safa Hygiene",
   description:
-    "Safe, effective, and professional pest management services across Qatar.",
+    "Safe, effective, and professional cleaning and pest management services across Qatar.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

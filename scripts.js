@@ -63,6 +63,25 @@ const serviceCategoryEyebrow = document.querySelector("#services-category-eyebro
 const serviceCategoryTitle = document.querySelector("#services-category-title");
 const serviceCategoryDescription = document.querySelector("#services-category-description");
 const serviceTileRow = document.querySelector(".services-tile-row");
+const serviceTabsScroller = document.querySelector(".services-tabs");
+
+function centerServiceTab(tab, behavior = "smooth") {
+  if (!tab || !serviceTabsScroller) {
+    return;
+  }
+
+  serviceTabsScroller.style.setProperty(
+    "--service-tabs-edge-pad",
+    `${Math.max(6, (serviceTabsScroller.clientWidth - tab.offsetWidth) / 2)}px`,
+  );
+
+  const tabCenter = tab.offsetLeft + tab.offsetWidth / 2;
+  const scrollerCenter = serviceTabsScroller.clientWidth / 2;
+  const maxScroll = serviceTabsScroller.scrollWidth - serviceTabsScroller.clientWidth;
+  const left = Math.max(0, Math.min(tabCenter - scrollerCenter, maxScroll));
+
+  serviceTabsScroller.scrollTo({ left, behavior });
+}
 
 function renderServiceCards(categoryId) {
   if (!serviceCatalog || !servicePanelImage || !serviceTileRow) {
@@ -125,6 +144,7 @@ function activateServiceTab(tab, moveFocus = false) {
   });
 
   renderServiceCards(categoryId);
+  centerServiceTab(tab);
 
   if (moveFocus) {
     tab.focus();
@@ -156,7 +176,222 @@ serviceTabs.forEach((tab, index) => {
   });
 });
 
-activateServiceTab(serviceTabs.find((tab) => tab.classList.contains("is-active")) ?? serviceTabs[0]);
+const requestedServiceCategory = new URLSearchParams(window.location.search).get(
+  "category",
+);
+const initialServiceTab =
+  serviceTabs.find((tab) => tab.dataset.serviceTab === requestedServiceCategory) ??
+  serviceTabs.find((tab) => tab.classList.contains("is-active")) ??
+  serviceTabs[0];
+
+activateServiceTab(initialServiceTab);
+window.addEventListener("resize", () => {
+  centerServiceTab(serviceTabs.find((tab) => tab.classList.contains("is-active")) ?? serviceTabs[0], "auto");
+});
+
+const cityCardRow = document.querySelector(".city-card-row");
+const cityScrollQuery = window.matchMedia("(max-width: 760px)");
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+let cityScrollInterval;
+let cityScrollEndTimer;
+let cityResizeTimer;
+let cityScrollDistance = 0;
+let cityScrollLoopStart = 0;
+let cityScrollPaused = false;
+
+function getCityScrollStep() {
+  const card = cityCardRow?.querySelector(".city-card");
+  const styles = cityCardRow ? window.getComputedStyle(cityCardRow) : undefined;
+  const gap = styles ? Number.parseFloat(styles.columnGap || styles.gap || "0") : 0;
+
+  return card ? card.getBoundingClientRect().width + gap : 0;
+}
+
+function getCenteredCityScrollLeft(card) {
+  if (!cityCardRow || !card) {
+    return 0;
+  }
+
+  const rowBounds = cityCardRow.getBoundingClientRect();
+  const cardBounds = card.getBoundingClientRect();
+
+  return (
+    cityCardRow.scrollLeft +
+    cardBounds.left +
+    cardBounds.width / 2 -
+    (rowBounds.left + cityCardRow.clientWidth / 2)
+  );
+}
+
+function jumpCityScrollTo(left) {
+  if (!cityCardRow) {
+    return;
+  }
+
+  const previousScrollBehavior = cityCardRow.style.scrollBehavior;
+  cityCardRow.style.scrollBehavior = "auto";
+  cityCardRow.scrollLeft = left;
+  void cityCardRow.offsetWidth;
+  cityCardRow.style.scrollBehavior = previousScrollBehavior;
+}
+
+function stopCityAutoScroll() {
+  window.clearInterval(cityScrollInterval);
+  cityScrollInterval = undefined;
+}
+
+function startCityAutoScroll() {
+  stopCityAutoScroll();
+
+  if (
+    !cityCardRow?.classList.contains("is-auto-scroll") ||
+    reducedMotionQuery.matches ||
+    document.hidden
+  ) {
+    return;
+  }
+
+  cityScrollInterval = window.setInterval(stepCityAutoScroll, 5000);
+}
+
+function setCityAutoScroll(enabled) {
+  if (!cityCardRow) {
+    return;
+  }
+
+  cityCardRow.querySelectorAll("[data-city-clone]").forEach((clone) => clone.remove());
+  cityCardRow.classList.toggle("is-auto-scroll", enabled);
+  cityScrollDistance = 0;
+  cityScrollLoopStart = 0;
+  window.clearTimeout(cityScrollEndTimer);
+  stopCityAutoScroll();
+
+  if (!enabled) {
+    jumpCityScrollTo(0);
+    return;
+  }
+
+  const originalCards = Array.from(cityCardRow.children);
+  const leadingClones = document.createDocumentFragment();
+  const trailingClones = document.createDocumentFragment();
+
+  originalCards.forEach((card) => {
+    const leadingClone = card.cloneNode(true);
+    const trailingClone = card.cloneNode(true);
+
+    leadingClone.setAttribute("aria-hidden", "true");
+    leadingClone.setAttribute("data-city-clone", "leading");
+    trailingClone.setAttribute("aria-hidden", "true");
+    trailingClone.setAttribute("data-city-clone", "trailing");
+
+    leadingClones.append(leadingClone);
+    trailingClones.append(trailingClone);
+  });
+
+  cityCardRow.prepend(leadingClones);
+  cityCardRow.append(trailingClones);
+
+  const firstOriginal = originalCards[0];
+  const firstTrailingClone = cityCardRow.querySelector(
+    '[data-city-clone="trailing"]',
+  );
+  cityScrollDistance =
+    firstOriginal && firstTrailingClone
+      ? firstTrailingClone.offsetLeft - firstOriginal.offsetLeft
+      : 0;
+  cityScrollLoopStart = getCenteredCityScrollLeft(firstOriginal);
+  jumpCityScrollTo(cityScrollLoopStart);
+
+  if (reducedMotionQuery.matches) {
+    return;
+  }
+
+  startCityAutoScroll();
+}
+
+function stepCityAutoScroll() {
+  if (!cityCardRow || cityScrollPaused || !cityScrollDistance) {
+    return;
+  }
+
+  const step = getCityScrollStep();
+
+  if (!step) {
+    return;
+  }
+
+  const nextLeft = cityCardRow.scrollLeft + step;
+
+  cityCardRow.scrollTo({
+    left: nextLeft,
+    behavior: "smooth",
+  });
+
+  window.setTimeout(() => {
+    if (!cityCardRow || cityScrollPaused) {
+      return;
+    }
+
+    normalizeCityScrollPosition();
+  }, 700);
+}
+
+function normalizeCityScrollPosition() {
+  if (!cityCardRow || !cityScrollDistance) {
+    return;
+  }
+
+  const loopEnd = cityScrollLoopStart + cityScrollDistance;
+
+  if (cityCardRow.scrollLeft >= loopEnd - 1) {
+    jumpCityScrollTo(cityCardRow.scrollLeft - cityScrollDistance);
+  } else if (cityCardRow.scrollLeft < cityScrollLoopStart - 1) {
+    jumpCityScrollTo(cityCardRow.scrollLeft + cityScrollDistance);
+  }
+}
+
+function updateCityAutoScroll() {
+  setCityAutoScroll(cityScrollQuery.matches);
+}
+
+function scheduleCityScrollNormalization() {
+  window.clearTimeout(cityScrollEndTimer);
+  cityScrollEndTimer = window.setTimeout(normalizeCityScrollPosition, 180);
+}
+
+function resumeCityAutoScroll() {
+  cityScrollPaused = false;
+  scheduleCityScrollNormalization();
+  startCityAutoScroll();
+}
+
+cityCardRow?.addEventListener("pointerdown", () => {
+  cityScrollPaused = true;
+  stopCityAutoScroll();
+});
+
+cityCardRow?.addEventListener("pointerup", resumeCityAutoScroll);
+cityCardRow?.addEventListener("pointercancel", resumeCityAutoScroll);
+cityCardRow?.addEventListener("pointerleave", resumeCityAutoScroll);
+cityCardRow?.addEventListener("scroll", scheduleCityScrollNormalization, {
+  passive: true,
+});
+cityCardRow?.addEventListener("scrollend", normalizeCityScrollPosition);
+
+cityScrollQuery.addEventListener("change", updateCityAutoScroll);
+reducedMotionQuery.addEventListener("change", updateCityAutoScroll);
+window.addEventListener("resize", () => {
+  window.clearTimeout(cityResizeTimer);
+  cityResizeTimer = window.setTimeout(updateCityAutoScroll, 180);
+});
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    stopCityAutoScroll();
+  } else {
+    startCityAutoScroll();
+  }
+});
+updateCityAutoScroll();
 
 const heroSlides = Array.from(document.querySelectorAll("[data-hero-slide]"));
 const heroMotionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");

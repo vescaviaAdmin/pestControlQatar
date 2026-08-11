@@ -1,4 +1,23 @@
 window.serviceCatalog = {
+  detailDefaults: {
+    badges: ["Experienced team", "Clear service scope", "Quality checked"],
+    facts: [
+      { value: "7+", label: "Years expertise" },
+      { value: "24/7", label: "Booking support" },
+      { value: "Qatar", label: "Service coverage" },
+    ],
+    spotlight: {
+      kicker: "Trusted local service",
+      title: "Professional property care with clear communication at every step.",
+      copy: "Support for homes, villas, apartments, offices, and commercial spaces across Qatar.",
+    },
+    steps: [
+      "Tell us about your property and the service you need.",
+      "We confirm the scope, timing, and recommended service plan.",
+      "Our team completes the work and shares practical after-care guidance.",
+    ],
+    ctaLabel: "Request a quote",
+  },
   categories: [
     {
       id: "cleaning",
@@ -7,6 +26,20 @@ window.serviceCatalog = {
       description: "Routine and deep cleaning for villas, apartments, and majlis spaces, delivered with a careful room-by-room approach.",
       background: "https://images.pexels.com/photos/3768914/pexels-photo-3768914.jpeg?auto=compress&cs=tinysrgb&w=1600",
       backgroundAlt: "Professional cleaning service in a modern home",
+      detailDefaults: {
+        badges: ["Room-by-room care", "Flexible scheduling", "Final quality check"],
+        spotlight: {
+          kicker: "Careful property cleaning",
+          title: "A cleaner, more comfortable space with a clear plan from start to finish.",
+          copy: "Suitable for villas, apartments, majlis rooms, and regularly maintained living spaces.",
+        },
+        steps: [
+          "Tell us about your property, rooms, and preferred service time.",
+          "We confirm the cleaning scope and prepare the right team and equipment.",
+          "Our team cleans each agreed area, completes a final check, and shares care guidance.",
+        ],
+        ctaLabel: "Request a cleaning quote",
+      },
       services: [
         {
           slug: "villa-cleaning",
@@ -66,6 +99,20 @@ window.serviceCatalog = {
       description: "Focused care for sofas, carpets, mattresses, and water tanks using methods suited to each material and space.",
       background: "https://images.pexels.com/photos/30238384/pexels-photo-30238384.jpeg?auto=compress&cs=tinysrgb&w=1600",
       backgroundAlt: "Technician cleaning upholstery",
+      detailDefaults: {
+        badges: ["Material-aware methods", "Targeted stain care", "Clear drying guidance"],
+        spotlight: {
+          kicker: "Focused hygiene care",
+          title: "Purposeful cleaning selected for the material, condition, and everyday use of each item.",
+          copy: "Ideal for upholstery, carpets, mattresses, and other areas that need focused attention.",
+        },
+        steps: [
+          "We review the material, condition, stains, and access around the item or area.",
+          "The team selects a suitable cleaning method and completes the agreed treatment.",
+          "We check the finish and explain drying times and practical after-care.",
+        ],
+        ctaLabel: "Request a specialist quote",
+      },
       services: [
         {
           slug: "sofa-cleaning",
@@ -110,6 +157,20 @@ window.serviceCatalog = {
       description: "Restoration, polishing, and stain treatment for marble, granite, and tired stone surfaces in homes and businesses.",
       background: "https://images.pexels.com/photos/14613453/pexels-photo-14613453.jpeg?auto=compress&cs=tinysrgb&w=1600",
       backgroundAlt: "Bright polished marble flooring in a modern interior",
+      detailDefaults: {
+        badges: ["Surface assessment", "Professional equipment", "Finish-care guidance"],
+        spotlight: {
+          kicker: "Specialist floor care",
+          title: "A measured polishing or restoration plan for a cleaner, more refined floor finish.",
+          copy: "Suitable for marble, granite, and tired stone surfaces in homes and commercial interiors.",
+        },
+        steps: [
+          "We assess the floor type, current finish, stains, scratches, and worn areas.",
+          "The team confirms the suitable polishing, treatment, or restoration process.",
+          "We complete the work, review the finish, and provide practical maintenance guidance.",
+        ],
+        ctaLabel: "Request a floor assessment",
+      },
       services: [
         {
           slug: "marble-polishing",
@@ -154,6 +215,20 @@ window.serviceCatalog = {
       description: "Targeted pest management for homes, commercial properties, cockroach concerns, and food-service environments.",
       background: "https://images.pexels.com/photos/4176415/pexels-photo-4176415.jpeg?auto=compress&cs=tinysrgb&w=1600",
       backgroundAlt: "Protective treatment being applied inside a property",
+      detailDefaults: {
+        badges: ["Inspection-led plan", "Targeted treatment", "Prevention guidance"],
+        spotlight: {
+          kicker: "Targeted pest protection",
+          title: "A practical treatment plan focused on the pest, affected areas, and property type.",
+          copy: "Support for homes, businesses, food-service spaces, and recurring pest concerns across Qatar.",
+        },
+        steps: [
+          "Tell us what you have noticed and where activity is taking place.",
+          "We inspect the affected and surrounding areas before confirming the treatment plan.",
+          "The team applies the targeted treatment and explains safety and prevention guidance.",
+        ],
+        ctaLabel: "Book a pest inspection",
+      },
       services: [
         {
           slug: "residential-pest-control",

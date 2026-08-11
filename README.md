@@ -1,4 +1,4 @@
-# Qatar Pest Control Website
+# Al Safa Hygiene Website
 
 This README is the project map. If someone needs to understand the code later,
 start here before reading individual files.
@@ -32,7 +32,7 @@ These are the important public website files:
 - `scripts.js` - homepage behavior. Handles sticky header scroll state, smooth
   anchor scrolling, service tab state, and rendering service cards from
   `window.serviceCatalog`.
-- `service-detail.js` - service detail behavior. Reads `?service=slug`, finds
+- `service-page.js` - service detail behavior. Reads `?service=slug`, finds
   that service in `window.serviceCatalog.allServices`, and updates the detail
   page DOM.
 - `styles.css` - all styling for the static site, including responsive layout,
@@ -64,7 +64,7 @@ assets.
 - **Service list, tab content, or detail content:** edit `service-data.js`.
 - **Service card rendering behavior:** edit `scripts.js`.
 - **Detail page layout placeholders:** edit `service-detail.html`.
-- **Detail page data binding:** edit `service-detail.js`.
+- **Detail page data binding:** edit `service-page.js`.
 - **Colors, spacing, responsive behavior, cards, mobile CTA:** edit
   `styles.css`.
 - **Phone/email/contact placeholders:** currently appear in `index.html`,
@@ -187,7 +187,7 @@ They are ignored or generated outputs.
 - The static site is the public deployment target, even though the package name
   and scripts are Vinext-based.
 - Service cards and detail pages depend on `window.serviceCatalog`; load
-  `service-data.js` before `scripts.js` and `service-detail.js`.
+  `service-data.js` before `scripts.js` and `service-page.js`.
 - The service detail page falls back to the first service if a slug is missing
   or unknown.
 - Some city/why-us imagery in `index.html` and the service showcase in

@@ -29,7 +29,7 @@ test("server-renders the Qatar pest control hero", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Qatar Pest Control<\/title>/i);
+  assert.match(html, /<title>Al Safa Hygiene<\/title>/i);
   assert.match(html, /Qatar(?:’|&rsquo;|&#x27;)s Trusted Pest Control Experts/);
   assert.match(html, /Delivering safe, effective, and professional pest management/);
   assert.match(html, /Providing top class services in:/);
@@ -47,7 +47,7 @@ test("keeps the Figma-matched styling and local assets wired", async () => {
   ]);
 
   assert.match(page, /const serviceAreas/);
-  assert.match(page, /\/figma-assets\/logo\.png/);
+  assert.match(page, /\/alsafa_logo_cutout\.png/);
   assert.match(layout, /Manrope/);
   assert.match(css, /max-width:\s*1280px/);
   assert.match(css, /min-height:\s*832px/);

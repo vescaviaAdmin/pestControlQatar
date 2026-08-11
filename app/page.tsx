@@ -1,144 +1,117 @@
 import type { Metadata } from "next";
 
-const navItems = ["Why us", "Why us", "Why us"];
-const serviceAreas = [
-  "Doha",
-  "Al Wakrah",
-  "Al Khor",
-  "Al Rayyan",
-  "Al Rayyan",
-  "Al Shahaniya",
-  "Mesaieed",
+const highlights = [
+  "Rapid response",
+  "Careful, approved methods",
+  "Homes & businesses",
 ];
 
-const photos = [
-  {
-    src: "/figma-assets/image-5.png",
-    alt: "Pest control technician treating a window area from a ladder",
-    tileClass: "photo-tile photo-tile-large",
-    imageClass: "photo-image image-5",
-  },
-  {
-    src: "/figma-assets/image-7.png",
-    alt: "Floor treatment equipment used for professional pest control",
-    tileClass: "photo-tile photo-tile-small",
-    imageClass: "photo-image image-7",
-  },
-  {
-    src: "/figma-assets/image-6.png",
-    alt: "Technician cleaning and treating a mattress surface",
-    tileClass: "photo-tile photo-tile-medium",
-    imageClass: "photo-image image-6",
-  },
-  {
-    src: "/figma-assets/image-4.png",
-    alt: "Outdoor pest control spraying service on a garden wall",
-    tileClass: "photo-tile photo-tile-tall",
-    imageClass: "photo-image image-4",
-  },
+const metrics = [
+  { value: "7+", label: "Years expertise" },
+  { value: "1000+", label: "Jobs completed" },
+  { value: "4.8", label: "Average rating" },
+  { value: "24/7", label: "Booking support" },
 ];
 
 export const metadata: Metadata = {
-  title: "Qatar Pest Control",
+  title: "Professional Pest Control & Cleaning Services in Qatar | Al Safa Hygiene",
   description:
-    "Safe, effective, and professional pest management services across Qatar.",
+    "Professional pest control, deep cleaning, upholstery, and floor-care services for homes and businesses across Qatar.",
 };
 
-function Button({
-  children,
-  variant = "primary",
-  size = "hero",
-}: {
-  children: React.ReactNode;
-  variant?: "primary" | "outline";
-  size?: "hero" | "nav";
-}) {
+function SiteHeader() {
   return (
-    <a className={`cta-button cta-${variant} cta-${size}`} href="#contact">
-      {children}
-    </a>
-  );
-}
+    <header className="marketing-header" aria-label="Main navigation">
+      <div className="header-shell">
+        <a className="brand" href="/" aria-label="Al Safa Hygiene home">
+          <img src="/alsafa_logo_cutout.png" alt="Al Safa Hygiene" />
+        </a>
 
-function PhotoTile({
-  src,
-  alt,
-  tileClass,
-  imageClass,
-}: {
-  src: string;
-  alt: string;
-  tileClass: string;
-  imageClass: string;
-}) {
-  return (
-    <figure className={tileClass}>
-      <img className={imageClass} src={src} alt={alt} />
-    </figure>
-  );
-}
+        <nav className="marketing-nav" aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#why-us">Why us</a>
+          <a href="/services/villa-cleaning">Villa cleaning</a>
+        </nav>
 
-function ServiceChip({ label }: { label: string }) {
-  return <li className="service-chip">{label}</li>;
+        <a className="header-call" href="tel:+97477881230">
+          Call +974 7788 1230
+        </a>
+      </div>
+    </header>
+  );
 }
 
 export default function Home() {
   return (
-    <main className="qatar-page">
-      <div className="figma-frame">
-        <header className="site-header" aria-label="Main navigation">
-          <a className="brand-mark" href="/" aria-label="Qatar Pest Control">
-            <img src="/figma-assets/logo.png" alt="Qatar Pest Control logo" />
-          </a>
+    <main className="marketing-page">
+      <section className="home-hero" id="why-us" aria-labelledby="hero-title">
+        <img
+          className="home-hero-image"
+          src="/hero-floor-care.jpg"
+          alt="Professional floor cleaning equipment in a bright home"
+          fetchPriority="high"
+        />
+        <div className="home-hero-shade" aria-hidden="true" />
 
-          <nav className="nav-links" aria-label="Primary">
-            {navItems.map((item, index) => (
-              <a href="#why-us" key={`${item}-${index}`}>
-                {item}
-              </a>
-            ))}
-          </nav>
+        <SiteHeader />
 
-          <Button size="nav">Get in touch</Button>
-        </header>
-
-        <section className="hero-copy" aria-labelledby="hero-heading">
-          <div className="headline-block">
-            <h1 id="hero-heading">
-              Qatar&rsquo;s Trusted Pest Control Experts
-            </h1>
-            <p>
-              Delivering safe, effective, and professional pest management
-              services across Qatar, backed by 7+ years of industry expertise.
+        <div className="home-hero-shell">
+          <div className="home-hero-copy">
+            <p className="availability-pill">
+              <span aria-hidden="true" />
+              Same-day and 24/7 booking support
             </p>
+
+            <h1 id="hero-title">
+              Professional Pest Control
+              <span>&amp; Cleaning Services in Qatar</span>
+            </h1>
+
+            <p className="hero-intro">
+              One trusted team for pest treatments, deep cleaning, upholstery,
+              and floor care across villas, apartments, offices, and commercial
+              spaces.
+            </p>
+
+            <ul className="feature-pills" aria-label="Service highlights">
+              {highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
+
+            <div className="hero-buttons">
+              <a className="action-button action-primary" href="tel:+97477881230">
+                Call for inspection
+              </a>
+              <a className="action-button action-secondary" href="/services/villa-cleaning">
+                Explore services
+              </a>
+            </div>
+
+            <dl className="hero-metrics" aria-label="Company highlights">
+              {metrics.map((metric) => (
+                <div key={metric.label}>
+                  <dt>{metric.value}</dt>
+                  <dd>{metric.label}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
-          <div className="hero-actions">
-            <Button>Get in touch</Button>
-            <Button variant="outline">Get in touch</Button>
-          </div>
-        </section>
-
-        <section className="photo-mosaic" aria-label="Pest control services">
-          <div className="photo-column">
-            <PhotoTile {...photos[0]} />
-            <PhotoTile {...photos[1]} />
-          </div>
-          <div className="photo-column">
-            <PhotoTile {...photos[2]} />
-            <PhotoTile {...photos[3]} />
-          </div>
-        </section>
-
-        <section className="service-areas" aria-labelledby="areas-heading">
-          <h2 id="areas-heading">Providing top class services in:</h2>
-          <ul>
-            {serviceAreas.map((area, index) => (
-              <ServiceChip label={area} key={`${area}-${index}`} />
-            ))}
-          </ul>
-        </section>
-      </div>
+          <aside className="property-card" id="services" aria-label="Complete property care">
+            <p>Complete property care</p>
+            <h2>One team. Every essential service.</h2>
+            <ul>
+              <li>Pest control and prevention</li>
+              <li>Deep and specialised cleaning</li>
+              <li>Floor and upholstery care</li>
+            </ul>
+            <a href="/services/villa-cleaning">
+              View villa cleaning <span aria-hidden="true">→</span>
+            </a>
+          </aside>
+        </div>
+      </section>
     </main>
   );
 }
