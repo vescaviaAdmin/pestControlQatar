@@ -46,7 +46,7 @@ window.serviceCatalog = {
           title: "Villa Cleaning",
           category: "Cleaning services",
           image: "https://images.pexels.com/photos/3768914/pexels-photo-3768914.jpeg?auto=compress&cs=tinysrgb&w=900",
-          detailImage: "public/service-showcase/enhanced/villa-cleaning-hq.png",
+          detailImage: "public/villa-cleaning-pexels.jpg",
           summary: "Complete interior cleaning for villas, majlis rooms, kitchens, bathrooms, and daily living areas.",
           includes: ["Room-by-room dusting", "Floor mopping and vacuuming", "Kitchen and bathroom wipe-down", "Balcony and high-touch surface cleaning"],
         },

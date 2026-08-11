@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
+async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request(`http://localhost${pathname}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -29,16 +29,27 @@ test("server-renders the Qatar pest control hero", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Al Safa Hygiene<\/title>/i);
-  assert.match(html, /Qatar(?:’|&rsquo;|&#x27;)s Trusted Pest Control Experts/);
-  assert.match(html, /Delivering safe, effective, and professional pest management/);
-  assert.match(html, /Providing top class services in:/);
-  assert.match(html, /Al Wakrah/);
-  assert.match(html, /\/figma-assets\/image-5\.png/);
+  assert.match(html, /Professional Pest Control &amp; Cleaning Services in Qatar/);
+  assert.match(html, /One trusted team for pest treatments, deep cleaning/);
+  assert.match(html, /Same-day and 24\/7 booking support/);
+  assert.match(html, /\/hero-floor-care\.jpg/);
+  assert.match(html, /\/services\/villa-cleaning/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|SkeletonPreview/);
 });
 
-test("keeps the Figma-matched styling and local assets wired", async () => {
+test("server-renders the matching villa-cleaning hero", async () => {
+  const response = await render("/services/villa-cleaning");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /<title>Villa Cleaning in Qatar \| Al Safa Hygiene<\/title>/i);
+  assert.match(html, /Complete interior cleaning for villas/);
+  assert.match(html, /Room-by-room care/);
+  assert.match(html, /\/villa-cleaning-pexels\.jpg/);
+  assert.match(html, /Request a cleaning quote/);
+});
+
+test("keeps the shared hero styling and local assets wired", async () => {
   const [page, layout, css, packageJson] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
@@ -46,12 +57,12 @@ test("keeps the Figma-matched styling and local assets wired", async () => {
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
 
-  assert.match(page, /const serviceAreas/);
+  assert.match(page, /const highlights/);
   assert.match(page, /\/alsafa_logo_cutout\.png/);
   assert.match(layout, /Manrope/);
-  assert.match(css, /max-width:\s*1280px/);
-  assert.match(css, /min-height:\s*832px/);
-  assert.match(css, /--brand:\s*#052253/);
-  assert.match(css, /--accent:\s*#1199ef/);
+  assert.match(css, /\.home-hero/);
+  assert.match(css, /\.villa-hero/);
+  assert.match(css, /--navy:\s*#031a3d/);
+  assert.match(css, /--blue:\s*#25b2ff/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });

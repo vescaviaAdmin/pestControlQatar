@@ -2,9 +2,20 @@
 
 The service showcase uses the Pexels CDN and the [Pexels license](https://www.pexels.com/license/), which permits free website use and modification. These source-page links preserve the original photo and photographer details.
 
+## Next/Vinext hero images
+
+- Homepage pest-control hero: <https://www.pexels.com/photo/a-woman-fumigating-while-wearing-a-personal-protective-equipment-4176415/>
+- Homepage deep-cleaning hero: <https://www.pexels.com/photo/person-cleaning-the-living-room-4098778/>
+- Homepage floor-care hero: <https://www.pexels.com/photo/9462167/>
+- Villa Cleaning detail hero: <https://www.pexels.com/photo/cleaners-cleaning-the-tiled-floor-6195278/>
+
+These hero photos are stored locally under `public/` so the primary content does
+not depend on a third-party image request at runtime.
+
 ## Cleaning services
 
-- Villa Cleaning: <https://www.pexels.com/photo/happy-middle-aged-housewife-doing-house-cleaning-at-home-3768914/>
+- Villa Cleaning showcase card: <https://www.pexels.com/photo/happy-middle-aged-housewife-doing-house-cleaning-at-home-3768914/>
+- Villa Cleaning detail hero: <https://www.pexels.com/photo/cleaners-cleaning-the-tiled-floor-6195278/>
 - Apartment Cleaning: <https://www.pexels.com/photo/a-woman-cleaning-a-house-8055198/>
 - Majlis Cleaning: <https://www.pexels.com/photo/cleaner-vacuuming-a-sofa-chair-4401538/>
 - Deep Cleaning: <https://www.pexels.com/photo/cleaning-supplies-3616735/>

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
 const highlights = [
   "Rapid response",
@@ -23,14 +25,20 @@ function SiteHeader() {
   return (
     <header className="marketing-header" aria-label="Main navigation">
       <div className="header-shell">
-        <a className="brand" href="/" aria-label="Al Safa Hygiene home">
-          <img src="/alsafa_logo_cutout.png" alt="Al Safa Hygiene" />
-        </a>
+        <Link className="brand" href="/" aria-label="Al Safa Hygiene home">
+          <Image
+            src="/alsafa_logo_cutout.png"
+            alt="Al Safa Hygiene"
+            width={118}
+            height={66}
+            unoptimized
+          />
+        </Link>
 
         <nav className="marketing-nav" aria-label="Primary navigation">
           <a href="#services">Services</a>
           <a href="#why-us">Why us</a>
-          <a href="/services/villa-cleaning">Villa cleaning</a>
+          <Link href="/services/villa-cleaning">Villa cleaning</Link>
         </nav>
 
         <a className="header-call" href="tel:+97477881230">
@@ -45,11 +53,14 @@ export default function Home() {
   return (
     <main className="marketing-page">
       <section className="home-hero" id="why-us" aria-labelledby="hero-title">
-        <img
+        <Image
           className="home-hero-image"
           src="/hero-floor-care.jpg"
           alt="Professional floor cleaning equipment in a bright home"
-          fetchPriority="high"
+          fill
+          sizes="100vw"
+          priority
+          unoptimized
         />
         <div className="home-hero-shade" aria-hidden="true" />
 
@@ -83,9 +94,9 @@ export default function Home() {
               <a className="action-button action-primary" href="tel:+97477881230">
                 Call for inspection
               </a>
-              <a className="action-button action-secondary" href="/services/villa-cleaning">
+              <Link className="action-button action-secondary" href="/services/villa-cleaning">
                 Explore services
-              </a>
+              </Link>
             </div>
 
             <dl className="hero-metrics" aria-label="Company highlights">
@@ -106,9 +117,9 @@ export default function Home() {
               <li>Deep and specialised cleaning</li>
               <li>Floor and upholstery care</li>
             </ul>
-            <a href="/services/villa-cleaning">
+            <Link href="/services/villa-cleaning">
               View villa cleaning <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </aside>
         </div>
       </section>

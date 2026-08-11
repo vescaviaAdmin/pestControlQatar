@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
 const cleaningHighlights = [
   "Room-by-room care",
@@ -16,16 +18,22 @@ function SiteHeader() {
   return (
     <header className="marketing-header detail-header" aria-label="Main navigation">
       <div className="header-shell">
-        <a className="brand" href="/" aria-label="Al Safa Hygiene home">
-          <img src="/alsafa_logo_cutout.png" alt="Al Safa Hygiene" />
-        </a>
+        <Link className="brand" href="/" aria-label="Al Safa Hygiene home">
+          <Image
+            src="/alsafa_logo_cutout.png"
+            alt="Al Safa Hygiene"
+            width={118}
+            height={66}
+            unoptimized
+          />
+        </Link>
 
         <nav className="marketing-nav" aria-label="Primary navigation">
-          <a href="/#services">Services</a>
-          <a href="/#why-us">Why us</a>
-          <a aria-current="page" href="/services/villa-cleaning">
+          <Link href="/#services">Services</Link>
+          <Link href="/#why-us">Why us</Link>
+          <Link aria-current="page" href="/services/villa-cleaning">
             Villa cleaning
-          </a>
+          </Link>
         </nav>
 
         <a className="header-call" href="tel:+97477881230">
@@ -47,18 +55,18 @@ export default function VillaCleaningPage() {
 
         <div className="villa-shell">
           <nav className="breadcrumbs" aria-label="Breadcrumb">
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
             <span aria-hidden="true">/</span>
-            <a href="/#services">Services</a>
+            <Link href="/#services">Services</Link>
             <span aria-hidden="true">/</span>
             <span aria-current="page">Villa Cleaning</span>
           </nav>
 
           <div className="villa-grid">
             <div className="villa-copy">
-              <a className="back-pill" href="/#services">
+              <Link className="back-pill" href="/#services">
                 <span aria-hidden="true">←</span> All services
-              </a>
+              </Link>
 
               <p className="section-kicker">Cleaning services</p>
               <h1 id="villa-title">Villa Cleaning</h1>
@@ -87,12 +95,14 @@ export default function VillaCleaningPage() {
             </div>
 
             <figure className="villa-photo">
-              <img
-                src="/service-showcase/enhanced/villa-cleaning-hq.png"
-                alt="Professional team cleaning a modern villa living room"
-                width="960"
-                height="960"
-                fetchPriority="high"
+              <Image
+                src="/villa-cleaning-pexels.jpg"
+                alt="Two professional cleaners vacuuming and mopping a modern villa living room"
+                width={1600}
+                height={2400}
+                sizes="(max-width: 940px) calc(100vw - 48px), 54vw"
+                priority
+                unoptimized
               />
               <figcaption className="villa-photo-card">
                 <p>Careful property cleaning</p>
