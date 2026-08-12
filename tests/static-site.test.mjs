@@ -8,14 +8,14 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, "dist-static");
 
-const sourceFiles = [
-  "index.html",
-  "404.html",
-  "service-detail.html",
-  "styles.css",
-  "scripts.js",
-  "service-detail.js",
-  "service-data.js",
+const buildFiles = [
+  ["html/index.html", "index.html"],
+  ["html/404.html", "404.html"],
+  ["html/service-detail.html", "service-detail.html"],
+  ["css/styles.css", "css/styles.css"],
+  ["js/scripts.js", "js/scripts.js"],
+  ["js/service-detail.js", "js/service-detail.js"],
+  ["js/service-data.js", "js/service-data.js"],
 ];
 
 async function read(relativePath, base = root) {
@@ -41,8 +41,8 @@ async function listFiles(directory, prefix = "") {
 }
 
 test("build copies every static source and public asset", async () => {
-  for (const file of sourceFiles) {
-    assert.equal(await read(file, output), await read(file));
+  for (const [sourceFile, outputFile] of buildFiles) {
+    assert.equal(await read(outputFile, output), await read(sourceFile));
   }
 
   assert.deepEqual(
@@ -52,14 +52,14 @@ test("build copies every static source and public asset", async () => {
 
   const cleanDetailPage = await read("service-detail/index.html", output);
   assert.match(cleanDetailPage, /<base href="\.\.\/" \/>/);
-  assert.match(cleanDetailPage, /<script src="service-detail\.js"><\/script>/);
+  assert.match(cleanDetailPage, /<script src="js\/service-detail\.js"><\/script>/);
 });
 
 test("homepage and detail template keep their required content and scripts", async () => {
   const [homepage, detailPage, notFoundPage] = await Promise.all([
-    read("index.html"),
-    read("service-detail.html"),
-    read("404.html"),
+    read("html/index.html"),
+    read("html/service-detail.html"),
+    read("html/404.html"),
   ]);
 
   assert.match(homepage, /Professional Pest Control/);
@@ -78,7 +78,7 @@ test("homepage and detail template keep their required content and scripts", asy
 
 test("service catalog has valid unique services and existing local images", async () => {
   const context = { window: {} };
-  vm.runInNewContext(await read("service-data.js"), context);
+  vm.runInNewContext(await read("js/service-data.js"), context);
 
   const catalog = context.window.serviceCatalog;
   assert.ok(Array.isArray(catalog?.categories));

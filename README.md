@@ -5,13 +5,9 @@ Qatar.
 
 ## Project structure
 
-- `index.html` — homepage content.
-- `service-detail.html` — shared service detail template.
-- `service-data.js` — service categories and service content.
-- `scripts.js` — homepage navigation, tabs, sliders, and responsive behavior.
-- `service-detail.js` — fills the detail template from `?service=<slug>`.
-- `styles.css` — shared responsive styling.
-- `404.html` — not-found page.
+- `html/` — homepage, service detail template, and not-found page.
+- `js/` — service data and browser behavior.
+- `css/` — shared responsive styling.
 - `public/` — images and icons used by the website.
 - `scripts/build-static.sh` — creates the deployable `dist-static/` directory.
 - `tests/static-site.test.mjs` — dependency-free build and integrity tests.
@@ -19,18 +15,21 @@ Qatar.
 ## Commands
 
 ```bash
-npm run build
-npm test
+bash scripts/build-static.sh
+node --check js/scripts.js
+node --check js/service-data.js
+node --check js/service-detail.js
+node --test tests/static-site.test.mjs
 ```
 
-No dependency installation is required. The build uses Bash and the tests use
-Node.js built-ins.
+No dependency installation or package manager is required. The build uses Bash
+and the tests use Node.js built-ins.
 
 ## Deployment
 
 Vercel and GitHub Pages both run `scripts/build-static.sh` and publish
-`dist-static/`. Do not edit generated files in that directory; edit the source
-files in the repository root and rebuild.
+`dist-static/`. Do not edit generated files in that directory; edit files in
+`html/`, `js/`, `css/`, or `public/` and rebuild.
 
 Service cards link to URLs such as:
 
@@ -38,6 +37,6 @@ Service cards link to URLs such as:
 service-detail?service=villa-cleaning
 ```
 
-To add or change a service, update `service-data.js`. Keep local images under
+To add or change a service, update `js/service-data.js`. Keep local images under
 `public/` and record externally sourced service imagery in
 `SERVICE_IMAGE_SOURCES.md`.
