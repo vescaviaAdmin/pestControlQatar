@@ -6,16 +6,16 @@ import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const output = path.join(root, "dist-static");
+const output = path.join(root, "distStatic");
 
 const buildFiles = [
   ["html/index.html", "index.html"],
   ["html/404.html", "404.html"],
-  ["html/service-detail.html", "service-detail.html"],
+  ["html/serviceDetail.html", "service-detail.html"],
   ["css/styles.css", "css/styles.css"],
   ["js/scripts.js", "js/scripts.js"],
-  ["js/service-detail.js", "js/service-detail.js"],
-  ["js/service-data.js", "js/service-data.js"],
+  ["js/serviceDetail.js", "js/serviceDetail.js"],
+  ["js/serviceData.js", "js/serviceData.js"],
 ];
 
 async function read(relativePath, base = root) {
@@ -52,13 +52,13 @@ test("build copies every static source and public asset", async () => {
 
   const cleanDetailPage = await read("service-detail/index.html", output);
   assert.match(cleanDetailPage, /<base href="\.\.\/" \/>/);
-  assert.match(cleanDetailPage, /<script src="js\/service-detail\.js"><\/script>/);
+  assert.match(cleanDetailPage, /<script src="js\/serviceDetail\.js"><\/script>/);
 });
 
 test("homepage and detail template keep their required content and scripts", async () => {
   const [homepage, detailPage, notFoundPage] = await Promise.all([
     read("html/index.html"),
-    read("html/service-detail.html"),
+    read("html/serviceDetail.html"),
     read("html/404.html"),
   ]);
 
@@ -67,18 +67,18 @@ test("homepage and detail template keep their required content and scripts", asy
   assert.match(homepage, /id="booking-process"/);
   assert.match(homepage, /id="cities"/);
   assert.match(homepage, /id="faq"/);
-  assert.ok(homepage.indexOf("service-data.js") < homepage.indexOf("scripts.js"));
+  assert.ok(homepage.indexOf("serviceData.js") < homepage.indexOf("scripts.js"));
 
   assert.match(detailPage, /id="detail-title"/);
   assert.ok(
-    detailPage.indexOf("service-data.js") < detailPage.indexOf("service-detail.js"),
+    detailPage.indexOf("serviceData.js") < detailPage.indexOf("serviceDetail.js"),
   );
   assert.match(notFoundPage, /Page not found/i);
 });
 
 test("service catalog has valid unique services and existing local images", async () => {
   const context = { window: {} };
-  vm.runInNewContext(await read("js/service-data.js"), context);
+  vm.runInNewContext(await read("js/serviceData.js"), context);
 
   const catalog = context.window.serviceCatalog;
   assert.ok(Array.isArray(catalog?.categories));

@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "",
-  "buildCommand": "bash ./scripts/build-static.sh",
-  "outputDirectory": "dist-static",
+  "buildCommand": "bash ./scripts/buildStatic.sh",
+  "outputDirectory": "distStatic",
   "cleanUrls": true
 }

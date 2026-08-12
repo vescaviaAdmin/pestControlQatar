@@ -1,4 +1,4 @@
-/dist-static/
+/distStatic/
 /node_modules/
 /.vercel/
 .env*
