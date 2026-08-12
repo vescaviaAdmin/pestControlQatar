@@ -9,17 +9,17 @@ Qatar.
 - `js/` — service data and browser behavior.
 - `css/` — shared responsive styling.
 - `public/` — images and icons used by the website.
-- `scripts/build-static.sh` — creates the deployable `dist-static/` directory.
-- `tests/static-site.test.mjs` — dependency-free build and integrity tests.
+- `scripts/buildStatic.sh` — creates the deployable `distStatic/` directory.
+- `tests/staticSite.test.mjs` — dependency-free build and integrity tests.
 
 ## Commands
 
 ```bash
-bash scripts/build-static.sh
+bash scripts/buildStatic.sh
 node --check js/scripts.js
-node --check js/service-data.js
-node --check js/service-detail.js
-node --test tests/static-site.test.mjs
+node --check js/serviceData.js
+node --check js/serviceDetail.js
+node --test tests/staticSite.test.mjs
 ```
 
 No dependency installation or package manager is required. The build uses Bash
@@ -27,8 +27,8 @@ and the tests use Node.js built-ins.
 
 ## Deployment
 
-Vercel and GitHub Pages both run `scripts/build-static.sh` and publish
-`dist-static/`. Do not edit generated files in that directory; edit files in
+Vercel runs `scripts/buildStatic.sh` and publishes `distStatic/`. Do not edit
+generated files in that directory; edit files in
 `html/`, `js/`, `css/`, or `public/` and rebuild.
 
 Service cards link to URLs such as:
@@ -37,7 +37,7 @@ Service cards link to URLs such as:
 service-detail?service=villa-cleaning
 ```
 
-To add or change a service, update `js/service-data.js`. Keep local images under
+To add or change a service, update `js/serviceData.js`. Keep local images under
 `public/` and add the source of externally sourced imagery below.
 
 ## Image sources and licensing
