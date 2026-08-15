@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css?v=10" />
+    <link rel="stylesheet" href="css/styles.css?v=11" />
   </head>
   <body class="home-body">
     <main class="homepage">
@@ -143,6 +143,18 @@
           </div>
         </section>
 
+        <section class="trust-strip" aria-label="Service guarantees">
+          <div class="trust-strip-shell">
+            <ul class="trust-strip-list">
+              <li><span aria-hidden="true">✓</span> Certified technicians</li>
+              <li><span aria-hidden="true">✓</span> Approved, safe treatments</li>
+              <li><span aria-hidden="true">✓</span> Qatar-wide coverage</li>
+              <li><span aria-hidden="true">✓</span> 24/7 booking support</li>
+              <li><span aria-hidden="true">✓</span> 4.8-rated service</li>
+            </ul>
+          </div>
+        </section>
+
         <section
           class="service-showcase"
           id="services"
@@ -204,49 +216,11 @@
             </div>
 
             <div
-              class="services-figma-panel"
+              class="services-figma-panel is-grid-only"
               id="services-panel"
               role="tabpanel"
               aria-labelledby="service-tab-cleaning"
             >
-              <section class="services-category-visual" aria-labelledby="services-category-title">
-                <img
-                  id="services-panel-image"
-                  src="https://images.pexels.com/photos/3768914/pexels-photo-3768914.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-                  alt="Professional cleaning service in a modern home"
-                />
-                <div class="services-panel-overlay"></div>
-
-                <div class="services-category-summary">
-                  <span class="services-category-mark" aria-hidden="true">&#10003;</span>
-                  <p id="services-category-eyebrow">Everyday property care</p>
-                  <h3 id="services-category-title">Cleaning services</h3>
-                  <p id="services-category-description">
-                    Routine and deep cleaning for villas, apartments, and majlis spaces,
-                    delivered with a careful room-by-room approach.
-                  </p>
-
-                  <dl class="services-category-facts" aria-label="Service category highlights">
-                    <div>
-                      <dt>4</dt>
-                      <dd>Core services</dd>
-                    </div>
-                    <div>
-                      <dt>Qatar</dt>
-                      <dd>Wide coverage</dd>
-                    </div>
-                    <div>
-                      <dt>Home</dt>
-                      <dd>&amp; business care</dd>
-                    </div>
-                    <div>
-                      <dt>24/7</dt>
-                      <dd>Booking support</dd>
-                    </div>
-                  </dl>
-                </div>
-              </section>
-
               <div class="services-tile-row" aria-label="Cleaning services">
                 <a class="service-card" href="service-detail?service=villa-cleaning" aria-label="View Villa Cleaning details">
                   <div class="service-card-media">
@@ -297,6 +271,80 @@
                   </div>
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about-split" id="why-choose" aria-labelledby="why-choose-title">
+          <div class="about-split-shell">
+            <div class="about-copy">
+              <p class="section-kicker section-kicker-light">Why choose us</p>
+              <h2 id="why-choose-title">Trusted by Qatar&rsquo;s homes and businesses</h2>
+              <p class="about-lead">
+                Every visit is handled by trained professionals using careful,
+                property-safe treatment methods, from single-family villas to
+                large commercial kitchens.
+              </p>
+
+              <ul class="about-reasons">
+                <li>
+                  <span class="trust-icon" aria-hidden="true">01</span>
+                  <div>
+                    <h3>Inspected &amp; planned</h3>
+                    <p>
+                      We identify the source before treatment so the solution
+                      is targeted, effective, and easier to maintain.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span class="trust-icon" aria-hidden="true">02</span>
+                  <div>
+                    <h3>Safe for daily spaces</h3>
+                    <p>
+                      We guide you through simple precautions for homes,
+                      offices, restaurants, and sensitive areas.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span class="trust-icon" aria-hidden="true">03</span>
+                  <div>
+                    <h3>Clear, honest pricing</h3>
+                    <p>
+                      You get service recommendations and pricing up front,
+                      without confusing add-ons.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span class="trust-icon" aria-hidden="true">04</span>
+                  <div>
+                    <h3>Rated by local customers</h3>
+                    <p>
+                      Families and businesses across Qatar trust us for tidy,
+                      professional, and reliable service.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+
+              <a class="button button-primary button-hero" href="#contact">Get in touch</a>
+            </div>
+
+            <div class="about-media">
+              <img
+                src="https://images.pexels.com/photos/19789837/pexels-photo-19789837/free-photo-of-pest-exterminator-fogging-the-yard.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Pest control worker fogging an outdoor residential area"
+                loading="lazy"
+                decoding="async"
+              />
+              <dl class="about-stats" aria-label="Company highlights">
+                <div><dt>7+</dt><dd>Years Expertise</dd></div>
+                <div><dt>4.8</dt><dd>Average Rating</dd></div>
+                <div><dt>1000+</dt><dd>Jobs Completed</dd></div>
+                <div><dt>24h</dt><dd>Fast Response</dd></div>
+              </dl>
             </div>
           </div>
         </section>
@@ -462,70 +510,47 @@
           </div>
         </section>
 
-        <section class="why-choose-section" id="why-choose" aria-labelledby="why-choose-title">
-          <div class="why-choose-shell">
-            <div class="why-choose-heading">
-              <p>Why choose us</p>
-              <h2 id="why-choose-title">Trusted by Qatar&rsquo;s homes and businesses</h2>
+        <!-- Placeholder customer quotes: swap in real reviews when available. -->
+        <section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
+          <div class="testimonials-shell">
+            <div class="testimonials-heading">
+              <p>Customer stories</p>
+              <h2 id="testimonials-title">What Qatar residents say about us</h2>
             </div>
 
-            <div class="why-choose-grid">
-              <article class="trust-card trust-card-featured">
-                <img
-                  class="trust-card-photo"
-                  src="https://images.pexels.com/photos/19789837/pexels-photo-19789837/free-photo-of-pest-exterminator-fogging-the-yard.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  alt="Pest control worker fogging an outdoor residential area"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div class="trust-icon" aria-hidden="true">✓</div>
-                <h3>Trusted pest control experts</h3>
-                <p>
-                  Every visit is handled by trained professionals using careful,
-                  property-safe treatment methods.
+            <div class="testimonials-grid">
+              <article class="testimonial-card">
+                <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
+                <p class="testimonial-quote">
+                  &ldquo;The team handled our villa&rsquo;s cockroach problem quickly
+                  and explained every step. No lingering smell, and it actually worked.&rdquo;
                 </p>
-                <div class="trust-stats">
-                  <div><strong>7+</strong><span>Years Expertise</span></div>
-                  <div><strong>4.8</strong><span>Average Rating</span></div>
-                  <div><strong>1000+</strong><span>Jobs Completed</span></div>
-                  <div><strong>24h</strong><span>Fast Response</span></div>
+                <div class="testimonial-author">
+                  <strong>Fatima Al-Sulaiti</strong>
+                  <span>Villa owner, Al Waab</span>
                 </div>
               </article>
-
-              <article class="trust-card">
-                <div class="trust-icon" aria-hidden="true">01</div>
-                <h3>Inspected &amp; planned</h3>
-                <p>
-                  We identify the source before treatment so the solution is
-                  targeted, effective, and easier to maintain.
+              <article class="testimonial-card">
+                <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
+                <p class="testimonial-quote">
+                  &ldquo;Booked a deep clean before moving in and they were on time,
+                  thorough, and reasonably priced. Highly recommend for apartments.&rdquo;
                 </p>
+                <div class="testimonial-author">
+                  <strong>Omar Haddad</strong>
+                  <span>Tenant, The Pearl</span>
+                </div>
               </article>
-
-              <article class="trust-card">
-                <div class="trust-icon" aria-hidden="true">02</div>
-                <h3>Safe for daily spaces</h3>
-                <p>
-                  We guide you through simple precautions for homes, offices,
-                  restaurants, and sensitive areas.
+              <article class="testimonial-card">
+                <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
+                <p class="testimonial-quote">
+                  &ldquo;We use them for our restaurant&rsquo;s monthly pest control.
+                  Professional, discreet, and always around our operating hours.&rdquo;
                 </p>
-              </article>
-
-              <article class="trust-card">
-                <div class="trust-icon" aria-hidden="true">03</div>
-                <h3>Clear, honest pricing</h3>
-                <p>
-                  You get service recommendations and pricing up front, without
-                  confusing add-ons.
-                </p>
-              </article>
-
-              <article class="trust-card">
-                <div class="trust-icon" aria-hidden="true">04</div>
-                <h3>Rated by local customers</h3>
-                <p>
-                  Families and businesses across Qatar trust us for tidy,
-                  professional, and reliable service.
-                </p>
+                <div class="testimonial-author">
+                  <strong>Sara Nasser</strong>
+                  <span>Restaurant manager, Msheireb</span>
+                </div>
               </article>
             </div>
           </div>
@@ -538,50 +563,69 @@
               <h2 id="faq-title">Frequently Asked Questions</h2>
             </div>
 
-            <div class="faq-list">
-              <details>
-                <summary>
-                  <span>What pest control services do you provide?</span>
-                </summary>
-                <p>
-                  We handle common residential and commercial pest issues,
-                  including cockroaches, ants, bed bugs, termites, rodents,
-                  mosquitoes, flies, and general preventive treatments.
-                </p>
-              </details>
+            <div class="faq-grid">
+              <div class="faq-list">
+                <details>
+                  <summary>
+                    <span>What pest control services do you provide?</span>
+                  </summary>
+                  <p>
+                    We handle common residential and commercial pest issues,
+                    including cockroaches, ants, bed bugs, termites, rodents,
+                    mosquitoes, flies, and general preventive treatments.
+                  </p>
+                </details>
 
-              <details>
-                <summary>
-                  <span>Are your treatments safe for families and pets?</span>
-                </summary>
-                <p>
-                  Yes. We use controlled application methods and guide you on
-                  any simple precautions before and after treatment, especially
-                  for homes with children, pets, or sensitive areas.
-                </p>
-              </details>
+                <details>
+                  <summary>
+                    <span>How quickly can you visit my location?</span>
+                  </summary>
+                  <p>
+                    Availability depends on your area and service type, but we aim
+                    to schedule inspections and treatments as quickly as possible
+                    across Doha, Al Wakrah, Al Khor, Al Rayyan, and nearby areas.
+                  </p>
+                </details>
+              </div>
 
-              <details>
-                <summary>
-                  <span>How quickly can you visit my location?</span>
-                </summary>
-                <p>
-                  Availability depends on your area and service type, but we aim
-                  to schedule inspections and treatments as quickly as possible
-                  across Doha, Al Wakrah, Al Khor, Al Rayyan, and nearby areas.
-                </p>
-              </details>
+              <div class="faq-list">
+                <details>
+                  <summary>
+                    <span>Are your treatments safe for families and pets?</span>
+                  </summary>
+                  <p>
+                    Yes. We use controlled application methods and guide you on
+                    any simple precautions before and after treatment, especially
+                    for homes with children, pets, or sensitive areas.
+                  </p>
+                </details>
 
-              <details>
-                <summary>
-                  <span>Do you offer one-time and regular pest control plans?</span>
-                </summary>
-                <p>
-                  Yes. You can book a single treatment or choose a recurring
-                  maintenance plan for ongoing protection in homes, offices,
-                  restaurants, warehouses, and other properties.
-                </p>
-              </details>
+                <details>
+                  <summary>
+                    <span>Do you offer one-time and regular pest control plans?</span>
+                  </summary>
+                  <p>
+                    Yes. You can book a single treatment or choose a recurring
+                    maintenance plan for ongoing protection in homes, offices,
+                    restaurants, warehouses, and other properties.
+                  </p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-banner" aria-labelledby="cta-banner-title">
+          <div class="cta-banner-shell">
+            <p class="section-kicker">Ready when you are</p>
+            <h2 id="cta-banner-title">Book your inspection today</h2>
+            <p>
+              Same-day response across Doha and nearby areas. Speak with our
+              team now and get a clear plan for your property.
+            </p>
+            <div class="cta-banner-actions">
+              <a class="button process-button" href="tel:+97400000000">Call for inspection</a>
+              <a class="button button-outline cta-banner-outline" href="#services">Explore services</a>
             </div>
           </div>
         </section>

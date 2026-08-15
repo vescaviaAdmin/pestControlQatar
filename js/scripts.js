@@ -65,7 +65,7 @@ const serviceCategoryDescription = document.querySelector("#services-category-de
 const serviceTileRow = document.querySelector(".services-tile-row");
 
 function renderServiceCards(categoryId) {
-  if (!serviceCatalog || !servicePanelImage || !serviceTileRow) {
+  if (!serviceCatalog || !serviceTileRow) {
     return;
   }
 
@@ -73,8 +73,10 @@ function renderServiceCards(categoryId) {
     serviceCatalog.categories.find((item) => item.id === categoryId) ??
     serviceCatalog.categories[0];
 
-  servicePanelImage.src = category.background;
-  servicePanelImage.alt = category.backgroundAlt;
+  if (servicePanelImage) {
+    servicePanelImage.src = category.background;
+    servicePanelImage.alt = category.backgroundAlt;
+  }
   servicePanel?.setAttribute("aria-labelledby", `service-tab-${category.id}`);
   serviceTileRow.setAttribute("aria-label", category.label);
 
