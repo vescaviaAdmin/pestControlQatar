@@ -94,16 +94,16 @@ function renderServiceCards(categoryId) {
     .map(
       (service, index) => `
         <a class="service-card" href="service-detail?service=${service.slug}" aria-label="View ${service.title} details">
+          <span class="service-card-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
           <div class="service-card-media">
             <img src="${service.image}" alt="" loading="lazy" decoding="async" />
-            <span class="service-card-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
           </div>
           <div class="service-card-body">
             <span class="service-card-kicker">${service.category}</span>
             <h3>${service.title}</h3>
             <p class="service-card-copy">${service.summary}</p>
-            <span class="service-card-link">View details</span>
           </div>
+          <span class="service-card-link">View details</span>
         </a>
       `,
     )

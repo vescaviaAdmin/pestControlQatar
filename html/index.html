@@ -9,22 +9,16 @@
     />
     <title>Qatar Pest Control</title>
     <link rel="icon" href="public/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/styles.css?v=10" />
+    <link rel="stylesheet" href="css/styles.css?v=11" />
   </head>
   <body class="home-body">
     <main class="homepage">
       <div class="figma-frame">
         <aside class="home-utility-bar" aria-label="Service availability">
           <div class="utility-shell">
-            <p><span aria-hidden="true">★</span> 4.8 customer-rated property care</p>
+            <p>4.8 average rating &middot; property care across Qatar</p>
             <div>
-              <span>24/7 booking support across Qatar</span>
+              <span>24/7 booking support</span>
               <a href="tel:+97400000000">Call now</a>
             </div>
           </div>
@@ -50,40 +44,10 @@
           </div>
         </header>
 
-        <section class="hero-section reference-hero" id="why-us" aria-labelledby="hero-title">
-          <div class="reference-hero-slides" aria-hidden="true">
-            <!-- Free-use Pexels photo by Michelangelo Buonarroti: pexels.com/photo/4176415 -->
-            <img
-              class="reference-hero-media hero-slide-pest is-active"
-              src="public/heroPestCleaning.jpg"
-              alt=""
-              data-hero-slide
-              fetchpriority="high"
-            />
-            <!-- Free-use Pexels photo by Matilda Wormwood: pexels.com/photo/4098778 -->
-            <img
-              class="reference-hero-media hero-slide-cleaning"
-              src="public/heroDeepCleaning.jpg"
-              alt=""
-              data-hero-slide
-              decoding="async"
-            />
-            <!-- Free-use Pexels photo by Liliana Drew: pexels.com/photo/9462167 -->
-            <img
-              class="reference-hero-media hero-slide-floor"
-              src="public/heroFloorCare.jpg"
-              alt=""
-              data-hero-slide
-              decoding="async"
-            />
-          </div>
-
+        <section class="hero-section" aria-labelledby="hero-title">
           <div class="hero-shell">
             <div class="hero-copy">
-              <p class="hero-eyebrow">
-                <span aria-hidden="true"></span>
-                Same-day and 24/7 booking support
-              </p>
+              <p class="hero-eyebrow">Same-day and 24/7 booking support</p>
               <div class="copy-stack">
                 <h1 id="hero-title">
                   Professional Pest Control
@@ -130,16 +94,18 @@
               </dl>
             </div>
 
-            <aside class="hero-assurance" aria-label="Complete property care">
-              <p>Complete property care</p>
-              <h2>One team. Every essential service.</h2>
-              <ul>
-                <li>Pest control and prevention</li>
-                <li>Deep and specialised cleaning</li>
-                <li>Floor and upholstery care</li>
-              </ul>
-              <a href="#services">View all services <span aria-hidden="true">→</span></a>
-            </aside>
+            <figure class="hero-media-frame">
+              <!-- Free-use Pexels photo by Michelangelo Buonarroti: pexels.com/photo/4176415 -->
+              <img
+                src="public/heroPestCleaning.jpg"
+                alt="Technician applying a careful pest treatment inside a Qatar property"
+                fetchpriority="high"
+              />
+              <figcaption class="hero-media-caption">
+                <span>Residential &amp; commercial</span>
+                <span>Doha, Qatar</span>
+              </figcaption>
+            </figure>
           </div>
         </section>
 
@@ -149,9 +115,9 @@
           aria-labelledby="service-showcase-title"
         >
           <div class="services-figma-shell">
-            <div class="services-figma-top">
+            <div class="section-head">
               <div>
-                <p>Best in class</p>
+                <p class="section-kicker">Best in class</p>
                 <h2 id="service-showcase-title">Services designed for homes and businesses</h2>
               </div>
             </div>
@@ -215,10 +181,8 @@
                   src="https://images.pexels.com/photos/3768914/pexels-photo-3768914.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
                   alt="Professional cleaning service in a modern home"
                 />
-                <div class="services-panel-overlay"></div>
 
                 <div class="services-category-summary">
-                  <span class="services-category-mark" aria-hidden="true">&#10003;</span>
                   <p id="services-category-eyebrow">Everyday property care</p>
                   <h3 id="services-category-title">Cleaning services</h3>
                   <p id="services-category-description">
@@ -249,52 +213,52 @@
 
               <div class="services-tile-row" aria-label="Cleaning services">
                 <a class="service-card" href="service-detail?service=villa-cleaning" aria-label="View Villa Cleaning details">
+                  <span class="service-card-number" aria-hidden="true">01</span>
                   <div class="service-card-media">
                     <img src="https://images.pexels.com/photos/3768914/pexels-photo-3768914.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" loading="lazy" decoding="async" />
-                    <span class="service-card-number" aria-hidden="true">01</span>
                   </div>
                   <div class="service-card-body">
                     <span class="service-card-kicker">Cleaning services</span>
                     <h3>Villa Cleaning</h3>
                     <p class="service-card-copy">Complete interior cleaning for villas, majlis rooms, kitchens, bathrooms, and daily living areas.</p>
-                    <span class="service-card-link">View details</span>
                   </div>
+                  <span class="service-card-link">View details</span>
                 </a>
                 <a class="service-card" href="service-detail?service=apartment-cleaning" aria-label="View Apartment Cleaning details">
+                  <span class="service-card-number" aria-hidden="true">02</span>
                   <div class="service-card-media">
                     <img src="https://images.pexels.com/photos/8055198/pexels-photo-8055198.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" loading="lazy" decoding="async" />
-                    <span class="service-card-number" aria-hidden="true">02</span>
                   </div>
                   <div class="service-card-body">
                     <span class="service-card-kicker">Cleaning services</span>
                     <h3>Apartment Cleaning</h3>
                     <p class="service-card-copy">Reliable apartment cleaning for compact homes, family flats, and rental handovers across Qatar.</p>
-                    <span class="service-card-link">View details</span>
                   </div>
+                  <span class="service-card-link">View details</span>
                 </a>
                 <a class="service-card" href="service-detail?service=majlis-cleaning" aria-label="View Majlis Cleaning details">
+                  <span class="service-card-number" aria-hidden="true">03</span>
                   <div class="service-card-media">
                     <img src="https://images.pexels.com/photos/4401538/pexels-photo-4401538.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" loading="lazy" decoding="async" />
-                    <span class="service-card-number" aria-hidden="true">03</span>
                   </div>
                   <div class="service-card-body">
                     <span class="service-card-kicker">Cleaning services</span>
                     <h3>Majlis Cleaning</h3>
                     <p class="service-card-copy">Careful cleaning for majlis spaces, seating areas, cushions, carpets, and guest-ready interiors.</p>
-                    <span class="service-card-link">View details</span>
                   </div>
+                  <span class="service-card-link">View details</span>
                 </a>
                 <a class="service-card" href="service-detail?service=deep-cleaning" aria-label="View Deep Cleaning details">
+                  <span class="service-card-number" aria-hidden="true">04</span>
                   <div class="service-card-media">
                     <img src="https://images.pexels.com/photos/3616735/pexels-photo-3616735.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="" loading="lazy" decoding="async" />
-                    <span class="service-card-number" aria-hidden="true">04</span>
                   </div>
                   <div class="service-card-body">
                     <span class="service-card-kicker">Cleaning services</span>
                     <h3>Deep Cleaning</h3>
                     <p class="service-card-copy">A detailed cleaning visit for move-in, move-out, post-renovation, or seasonal refresh needs.</p>
-                    <span class="service-card-link">View details</span>
                   </div>
+                  <span class="service-card-link">View details</span>
                 </a>
               </div>
             </div>
@@ -313,7 +277,7 @@
                 <h2 id="booking-process-title">How to book our services</h2>
               </div>
 
-              <a class="button process-button" href="#contact">Get in touch</a>
+              <a class="button button-outline process-button" href="#contact">Get in touch</a>
             </div>
 
             <ol class="process-steps">
@@ -360,50 +324,26 @@
               <article class="city-card">
                 <h3>Doha</h3>
                 <p>18 areas</p>
-                <div class="city-visual" aria-hidden="true">
-                  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Doha%20Corniche%20Skyline%20View%202.jpg?width=900" alt="" loading="lazy" decoding="async" />
-                  <span>DOH</span>
-                </div>
               </article>
               <article class="city-card">
                 <h3>Al Wakrah</h3>
                 <p>8 areas</p>
-                <div class="city-visual" aria-hidden="true">
-                  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Al-Wakrah%20Old%20Souq%2024.jpg?width=900" alt="" loading="lazy" decoding="async" />
-                  <span>WK</span>
-                </div>
               </article>
               <article class="city-card">
                 <h3>Al Khor</h3>
                 <p>6 areas</p>
-                <div class="city-visual" aria-hidden="true">
-                  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/View%20of%20Al%20Khor%20Island%20from%20a%20hillock.jpg?width=900" alt="" loading="lazy" decoding="async" />
-                  <span>AK</span>
-                </div>
               </article>
               <article class="city-card">
                 <h3>Al Rayyan</h3>
                 <p>14 areas</p>
-                <div class="city-visual" aria-hidden="true">
-                  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20of%20Education%20City%20Stadium%20and%20Oxygen%20Park%20in%20Al%20Rayyan.jpg?width=900" alt="" loading="lazy" decoding="async" />
-                  <span>RYN</span>
-                </div>
               </article>
               <article class="city-card">
                 <h3>Al Shahaniya</h3>
                 <p>5 areas</p>
-                <div class="city-visual" aria-hidden="true">
-                  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Camels%20crossing%20the%20road%20in%20Al%20Shahaniya.jpg?width=900" alt="" loading="lazy" decoding="async" />
-                  <span>SH</span>
-                </div>
               </article>
               <article class="city-card">
                 <h3>Mesaieed</h3>
                 <p>4 areas</p>
-                <div class="city-visual" aria-hidden="true">
-                  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sealine%20beach%20near%20Mesaieed%2C%20Qatar%20%282014%29.jpg?width=900" alt="" loading="lazy" decoding="async" />
-                  <span>MS</span>
-                </div>
               </article>
             </div>
 
@@ -421,12 +361,39 @@
 
               <div class="coverage-map-layout">
                 <figure class="coverage-map-card">
-                  <img
-                    src="public/qatarServiceMap.svg?v=5"
-                    alt="Dark map of Qatar showing its real major-road network, five national service zones, and a clustered marker for 18 Doha areas"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <svg viewBox="0 0 320 380" role="img" aria-labelledby="qatar-map-title">
+                    <title id="qatar-map-title">Schematic diagram of Qatar's national service regions</title>
+                    <path
+                      d="M138 18 L182 18 L188 60 L204 120 L214 190 L212 250 L226 300 L214 352 L150 362 L112 320 L106 250 L96 180 L104 110 L118 56 Z"
+                      fill="none"
+                      stroke="#5e5e5e"
+                      stroke-width="1.5"
+                    />
+                    <g stroke="#d7d7d5" stroke-width="1">
+                      <line x1="96" y1="90" x2="220" y2="90" />
+                      <line x1="90" y1="170" x2="222" y2="170" />
+                      <line x1="98" y1="250" x2="220" y2="250" />
+                      <line x1="106" y1="320" x2="218" y2="320" />
+                    </g>
+                    <circle cx="160" cy="150" r="5" fill="#c8102e" />
+                    <circle cx="160" cy="150" r="10" fill="none" stroke="#c8102e" stroke-width="1" opacity="0.5" />
+                    <text x="176" y="154" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" fill="#121212" letter-spacing="0.5">Doha</text>
+
+                    <circle cx="182" cy="252" r="3.5" fill="#7a7a7a" />
+                    <text x="194" y="256" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#5e5e5e" letter-spacing="0.5">Al Wakrah</text>
+
+                    <circle cx="150" cy="94" r="3.5" fill="#7a7a7a" />
+                    <text x="94" y="80" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#5e5e5e" letter-spacing="0.5">Al Khor</text>
+
+                    <circle cx="122" cy="180" r="3.5" fill="#7a7a7a" />
+                    <text x="60" y="184" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#5e5e5e" letter-spacing="0.5">Al Rayyan</text>
+
+                    <circle cx="132" cy="120" r="3.5" fill="#7a7a7a" />
+                    <text x="58" y="118" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#5e5e5e" letter-spacing="0.5">Al Shahaniya</text>
+
+                    <circle cx="196" cy="322" r="3.5" fill="#7a7a7a" />
+                    <text x="200" y="345" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#5e5e5e" letter-spacing="0.5">Mesaieed</text>
+                  </svg>
                 </figure>
 
                 <div class="coverage-area-copy">
@@ -478,7 +445,6 @@
                   loading="lazy"
                   decoding="async"
                 />
-                <div class="trust-icon" aria-hidden="true">✓</div>
                 <h3>Trusted pest control experts</h3>
                 <p>
                   Every visit is handled by trained professionals using careful,
@@ -492,41 +458,51 @@
                 </div>
               </article>
 
-              <article class="trust-card">
-                <div class="trust-icon" aria-hidden="true">01</div>
-                <h3>Inspected &amp; planned</h3>
-                <p>
-                  We identify the source before treatment so the solution is
-                  targeted, effective, and easier to maintain.
-                </p>
-              </article>
+              <div class="why-choose-list">
+                <article class="trust-card">
+                  <div class="trust-icon" aria-hidden="true">01</div>
+                  <div>
+                    <h3>Inspected &amp; planned</h3>
+                    <p>
+                      We identify the source before treatment so the solution is
+                      targeted, effective, and easier to maintain.
+                    </p>
+                  </div>
+                </article>
 
-              <article class="trust-card">
-                <div class="trust-icon" aria-hidden="true">02</div>
-                <h3>Safe for daily spaces</h3>
-                <p>
-                  We guide you through simple precautions for homes, offices,
-                  restaurants, and sensitive areas.
-                </p>
-              </article>
+                <article class="trust-card">
+                  <div class="trust-icon" aria-hidden="true">02</div>
+                  <div>
+                    <h3>Safe for daily spaces</h3>
+                    <p>
+                      We guide you through simple precautions for homes, offices,
+                      restaurants, and sensitive areas.
+                    </p>
+                  </div>
+                </article>
 
-              <article class="trust-card">
-                <div class="trust-icon" aria-hidden="true">03</div>
-                <h3>Clear, honest pricing</h3>
-                <p>
-                  You get service recommendations and pricing up front, without
-                  confusing add-ons.
-                </p>
-              </article>
+                <article class="trust-card">
+                  <div class="trust-icon" aria-hidden="true">03</div>
+                  <div>
+                    <h3>Clear, honest pricing</h3>
+                    <p>
+                      You get service recommendations and pricing up front, without
+                      confusing add-ons.
+                    </p>
+                  </div>
+                </article>
 
-              <article class="trust-card">
-                <div class="trust-icon" aria-hidden="true">04</div>
-                <h3>Rated by local customers</h3>
-                <p>
-                  Families and businesses across Qatar trust us for tidy,
-                  professional, and reliable service.
-                </p>
-              </article>
+                <article class="trust-card">
+                  <div class="trust-icon" aria-hidden="true">04</div>
+                  <div>
+                    <h3>Rated by local customers</h3>
+                    <p>
+                      Families and businesses across Qatar trust us for tidy,
+                      professional, and reliable service.
+                    </p>
+                  </div>
+                </article>
+              </div>
             </div>
           </div>
         </section>
